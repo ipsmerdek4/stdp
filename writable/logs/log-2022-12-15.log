@@ -1,0 +1,63 @@
+ERROR - 2022-12-15 13:32:44 --> mysqli_sql_exception: Unknown column 'jk_id' in 'where clause' in D:\laragon\www\pos-kayu\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\pos-kayu\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 D:\laragon\www\pos-kayu\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 D:\laragon\www\pos-kayu\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 D:\laragon\www\pos-kayu\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 D:\laragon\www\pos-kayu\vendor\codeigniter4\framework\system\Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 D:\laragon\www\pos-kayu\app\Controllers\Persediaan.php(307): CodeIgniter\Model->countAllResults()
+#6 D:\laragon\www\pos-kayu\vendor\codeigniter4\framework\system\CodeIgniter.php(927): App\Controllers\Persediaan->tb_ukuran_kayu()
+#7 D:\laragon\www\pos-kayu\vendor\codeigniter4\framework\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+#8 D:\laragon\www\pos-kayu\vendor\codeigniter4\framework\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\laragon\www\pos-kayu\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2022-12-15 13:32:44 --> Unknown column 'jk_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `t_ukurankayu`
+WHERE `jk_id` = \'0\'
+AND `nama_tk` = \'\'
+AND `sts_tk` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `t_ukurankayu`
+WHERE `jk_id` = \'0\'
+AND `nama_tk` = \'\'
+AND `sts_tk` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `t_ukurankayu`
+WHERE `jk_id` = \'0\'
+AND `nama_tk` = \'\'
+AND `sts_tk` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `t_ukurankayu`
+WHERE `jk_id` = :jk_id:
+AND `nama_tk` = :nama_tk:
+AND `sts_tk` = :sts_tk:', [...], false)
+ 5 SYSTEMPATH\Model.php(551): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Controllers\Persediaan.php(307): CodeIgniter\Model->countAllResults()
+ 7 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->tb_ukuran_kayu()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-15 15:32:18 --> Undefined array key 1
+in APPPATH\Views\persediaan.php on line 550.
+ 1 APPPATH\Views\persediaan.php(550): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Views\\persediaan.php', 550)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\persediaan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('persediaan', [], true)
+ 5 APPPATH\Controllers\Persediaan.php(49): view('persediaan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-15 15:34:36 --> Undefined array key 1
+in APPPATH\Views\persediaan.php on line 550.
+ 1 APPPATH\Views\persediaan.php(550): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'APPPATH\\Views\\persediaan.php', 550)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\persediaan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('persediaan', [], true)
+ 5 APPPATH\Controllers\Persediaan.php(49): view('persediaan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

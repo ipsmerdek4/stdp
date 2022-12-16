@@ -1,0 +1,49 @@
+CRITICAL - 2022-12-12 02:52:16 --> Undefined property: stdClass::$id_employee
+in APPPATH\Controllers\Persediaan.php on line 55.
+ 1 APPPATH\Controllers\Persediaan.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$id_employee', 'APPPATH\\Controllers\\Persediaan.php', 55)
+ 2 APPPATH\ThirdParty\CodeIgniter4-DataTables\src\DataTableQuery.php(91): App\Controllers\Persediaan->App\Controllers\{closure}(Object(stdClass))
+ 3 APPPATH\ThirdParty\CodeIgniter4-DataTables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\Persediaan.php(59): Hermawan\DataTables\DataTable->toJson()
+ 5 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 6 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 7 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-12 03:01:58 --> Object of class stdClass could not be converted to string
+in APPPATH\Controllers\Persediaan.php on line 54.
+ 1 APPPATH\ThirdParty\CodeIgniter4-DataTables\src\DataTableQuery.php(96): App\Controllers\Persediaan->App\Controllers\{closure}(Object(stdClass))
+ 2 APPPATH\ThirdParty\CodeIgniter4-DataTables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 3 APPPATH\Controllers\Persediaan.php(69): Hermawan\DataTables\DataTable->toJson()
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-12 03:02:05 --> Object of class stdClass could not be converted to string
+in APPPATH\Controllers\Persediaan.php on line 54.
+ 1 APPPATH\ThirdParty\CodeIgniter4-DataTables\src\DataTableQuery.php(96): App\Controllers\Persediaan->App\Controllers\{closure}(Object(stdClass))
+ 2 APPPATH\ThirdParty\CodeIgniter4-DataTables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 3 APPPATH\Controllers\Persediaan.php(69): Hermawan\DataTables\DataTable->toJson()
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-12 03:02:32 --> Object of class stdClass could not be converted to string
+in APPPATH\Controllers\Persediaan.php on line 54.
+ 1 APPPATH\ThirdParty\CodeIgniter4-DataTables\src\DataTableQuery.php(96): App\Controllers\Persediaan->App\Controllers\{closure}(Object(stdClass))
+ 2 APPPATH\ThirdParty\CodeIgniter4-DataTables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 3 APPPATH\Controllers\Persediaan.php(69): Hermawan\DataTables\DataTable->toJson()
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-12 20:06:14 --> foreach() argument must be of type array|object, null given
+in APPPATH\Views\Login.php on line 118.
+ 1 APPPATH\Views\Login.php(118): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', 'APPPATH\\Views\\Login.php', 118)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Login.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('\\App\\Views\\Login', [], true)
+ 5 APPPATH\ThirdParty\myth-auth\src\Controllers\AuthController.php(524): view('\\App\\Views\\Login', [...])
+ 6 APPPATH\ThirdParty\myth-auth\src\Controllers\AuthController.php(74): Myth\Auth\Controllers\AuthController->_render('\\App\\Views\\Login', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(927): Myth\Auth\Controllers\AuthController->login()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

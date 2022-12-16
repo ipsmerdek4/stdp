@@ -1,0 +1,135 @@
+CRITICAL - 2022-12-13 00:57:09 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:57:43 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:57:44 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:57:44 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:57:44 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:58:11 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:58:12 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:58:12 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:58:33 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:58:34 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:58:34 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:58:39 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:58:40 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:58:40 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:59:02 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 90.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:59:10 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 90.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 00:59:57 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 90.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 01:00:42 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 90.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 01:01:13 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 90.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 01:02:56 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 92.
+ 1 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Persediaan->view_jeniskayu()
+ 2 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persediaan))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 01:04:02 --> Class "App\Controllers\JenisKayuModel" not found
+in APPPATH\Controllers\Persediaan.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(889): App\Controllers\Persediaan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(473): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-12-13 15:50:11 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Persediaan.php on line 137.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\Persediaan.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Persediaan')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Persediaan')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Persediaan', true)
+ 5 SYSTEMPATH\CodeIgniter.php(469): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
