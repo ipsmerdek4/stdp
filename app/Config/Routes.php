@@ -46,6 +46,8 @@ $routes->get('/iuran', 'Iuran::index');
 $routes->get('/anggota', 'Anggota::index');
 $routes->get('/anggota/boxview-anggota', 'Anggota::views_anggota');
 $routes->post('/anggota/list-view-anggota', 'Anggota::list_view_anggota');
+$routes->get('/anggota/create', 'Anggota::create');
+$routes->post('/anggota/tambah', 'Anggota::pogress');
 
 
 

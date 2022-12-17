@@ -15,7 +15,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
             <h1 class="h3 mb-0 text-gray-800">Anggota</h1>
 
-            <a href="#" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
+            <a href="<?= base_url('anggota/create') ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
                 <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
                 Tambah Anggota
             </a>
@@ -48,15 +48,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                         <th class="text-sm-center">Jabatan</th> 
                                         <th class="text-sm-center">Telp</th> 
                                         <th class="text-sm-center">Alamat</th> 
-                                        <th class="text-sm-center">Status</th>  
-
-                                        
-                                      <!--   <th class="text-sm-center">username</th>   
-                                        <th class="text-sm-center">Email</th>  
-                                        <th class="text-sm-center">Password</th>  
-                                        <th class="text-sm-center">Foto</th>  
-                                        <th class="text-sm-center">Tanggal<br>Masuk</th>  --> 
-
+                                        <th class="text-sm-center">Status</th>   
                                         <th class="text-sm-center">Opsi</th> 
                                     </tr>
                                 </thead>
@@ -82,7 +74,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
 
 
-    <!-- Logout Modal-->
+    <!-- View Modal-->
     <div class="modal fade" id="v-gt" tabindex="-1" role="dialog" aria-labelledby="v-gt" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -93,25 +85,25 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col col-sm-4">  Username    </div>
-                        <div class="col col-sm-8 usr-angota">  username    </div>
+                    <div class="row text-center text-sm-left">
+                        <div class="col-12 col-sm-4 font-weight-bold">  Username    </div>
+                        <div class="col-12 col-sm-8 usr-angota">  username    </div>
                     </div>    
-                    <div class="row mt-3">
-                        <div class="col col-sm-4">  Email    </div>
-                        <div class="col col-sm-8 eml-angota">  Email    </div>
+                    <div class="row mt-3 text-center text-sm-left">
+                        <div class="col-12 col-sm-4 font-weight-bold">  Email    </div>
+                        <div class="col-12 col-sm-8 eml-angota">  Email    </div>
                     </div>    
-                    <div class="row mt-3">
-                        <div class="col col-sm-4">  Password    </div>
-                        <div class="col col-sm-8 pss-angota">  Password    </div>
+                    <div class="row mt-3 text-center text-sm-left">
+                        <div class="col-12 col-sm-4 font-weight-bold">  Password    </div>
+                        <div class="col-12 col-sm-8 pss-angota">  Password    </div>
                     </div>      
-                    <div class="row mt-3">
-                        <div class="col col-sm-4">  Tanggal Masuk    </div>
-                        <div class="col col-sm-8 tgl-angota">  Tanggal Masuk    </div>
+                    <div class="row mt-3 text-center text-sm-left">
+                        <div class="col-12 col-sm-4 font-weight-bold">  Tanggal Masuk    </div>
+                        <div class="col-12 col-sm-8 tgl-angota">  Tanggal Masuk    </div>
                     </div>       
-                    <div class="row mt-3">
-                        <div class="col-12 col-sm-4">  Picture    </div>
-                        <div class="col-12 col-sm-8 foto-angota">  Picture </div>
+                    <div class="row mt-3 text-center text-sm-left">
+                        <div class="col-12 col-sm-4 font-weight-bold">  Picture    </div>
+                        <div class="col-12 col-sm-8 foto-angota">   </div>
                     </div>     
                 </div>
                 <div class="modal-footer">
@@ -132,6 +124,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 <!--  -->
 <?= $this->section('styles') ?>
         <link rel="stylesheet" type="text/css" href="<?= base_url('Asset/datatables') ?>/datatables.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css"/> 
 
         <style>
 
@@ -141,10 +134,34 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 <?= $this->endSection() ?>
 <!--  -->
 <?= $this->section('javascript') ?>
-    <script type="text/javascript" src="<?= base_url('Asset/datatables') ?>/datatables.js"></script>            
+    <script type="text/javascript" src="<?= base_url('Asset/datatables') ?>/datatables.js"></script>     
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js"></script>        
 
 
     <script>
+
+
+            <?php if (!empty(session()->getFlashdata('error'))) : ?>    
+                Swal.fire({
+                            title: 'Warning',
+                            html: '<?php echo session()->getFlashdata('error'); ?>',
+                            icon: 'warning', 
+                        });
+
+            <?php endif; ?>
+ 
+            // jenis kayu
+            <?php if (!empty(session()->getFlashdata('msg_sccs'))) : ?>    
+                Swal.fire({
+                            title: 'Success',
+                            html: '<?php echo session()->getFlashdata('msg_sccs'); ?>',
+                            icon: 'success', 
+                        }); 
+            <?php endif; ?>
+
+
+
+
                 $(document).ready(function() {
                         // table Persediaan
                         $('#tableAll').DataTable({  
@@ -163,13 +180,8 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     {data: '2', className: "text-center"},  
                                     {data: '3', className: "text-center"},  
                                     {data: '4', className: "text-center"},  
-                                    {data: '5', className: "text-center"},   /* 
-                                    {data: '6', className: "text-center"},   
-                                    {data: '7', className: "text-center"},   
-                                    {data: '8', className: "text-center"},   
-                                    {data: '9', className: "text-center"},   
-                                    {data: '10', className: "text-center"},  */  
-                                    {data: '11', orderable: false, className: "text-center"},   
+                                    {data: '5', className: "text-center"},    
+                                    {data: '6', orderable: false, className: "text-center"},   
                                 ],    
                         });
 
@@ -191,7 +203,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 $('.eml-angota').html(vvv.email);
                                 $('.pss-angota').html(vvv.log);
                                 $('.tgl-angota').html(vvv.tanggal_masuk);
-                                $('.foto-angota').html(vvv.foto);
+                                $('.foto-angota').html('<img src="/Foto/anggota/'+ vvv.foto +'" alt="" class="img w-50 border rounded">'  );
                             })
 
 
