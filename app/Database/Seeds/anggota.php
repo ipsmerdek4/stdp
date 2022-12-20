@@ -7,7 +7,7 @@ class anggota extends \CodeIgniter\Database\Seeder{
             [ 
                 "id"                => "1",   
                 "nama_lengkap"      => "sekretaris",
-                "jabatan"           => "sekretaris",
+                "jabatan"           => "1",
                 "no_telp"           => "+62 ",
                 "alamat"            => "",
                 "foto"              => "",
@@ -17,7 +17,7 @@ class anggota extends \CodeIgniter\Database\Seeder{
             [ 
                 "id"                => "2",   
                 "nama_lengkap"      => "bendahara",
-                "jabatan"           => "bendahara",
+                "jabatan"           => "2",
                 "no_telp"           => "+62 ",
                 "alamat"            => "",
                 "foto"              => "",
@@ -27,7 +27,7 @@ class anggota extends \CodeIgniter\Database\Seeder{
             [ 
                 "id"                => "3",   
                 "nama_lengkap"      => "ketua dan wakil",
-                "jabatan"           => "ketua dan wakil",
+                "jabatan"           => "3",
                 "no_telp"           => "+62 ",
                 "alamat"            => "",
                 "foto"              => "",
@@ -37,7 +37,7 @@ class anggota extends \CodeIgniter\Database\Seeder{
             [ 
                 "id"                => "4",   
                 "nama_lengkap"      => "user",
-                "jabatan"           => "user",
+                "jabatan"           => "4",
                 "no_telp"           => "+62 ",
                 "alamat"            => "",
                 "foto"              => "",

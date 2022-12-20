@@ -48,11 +48,11 @@ $routes->get('/anggota/boxview-anggota', 'Anggota::views_anggota');
 $routes->post('/anggota/list-view-anggota', 'Anggota::list_view_anggota');
 $routes->get('/anggota/create', 'Anggota::create');
 $routes->post('/anggota/tambah', 'Anggota::pogress');
+$routes->get('/anggota/edit/(:any)', 'Anggota::edit/$1');
+$routes->post('/anggota/ubah/(:any)', 'Anggota::progres_update/$1');
+$routes->get('/anggota/hapus/(:any)', 'Anggota::delete/$1');
 
-
-
-
-
+ 
 
 $routes->get('/presensi', 'Presensi::index');
 $routes->get('/kegiatan', 'Kegiatan::index');

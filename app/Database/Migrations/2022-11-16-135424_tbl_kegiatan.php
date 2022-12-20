@@ -1,5 +1,5 @@
 <?php 
-/* namespace App\Database\Migrations;
+namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
@@ -19,10 +19,10 @@ class Tbl_kegiatan extends Migration{
         // 		],
         // ]);
         // $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('tbl_kegiatan');
+        // $this->forge->createTable('tbl_kegiatan');
     }
 
     public function down(){
-        $this->forge->dropTable('tbl_kegiatan');
+        // $this->forge->dropTable('tbl_kegiatan');
     }
-} */
+}

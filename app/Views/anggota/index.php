@@ -210,6 +210,53 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                         }
                     });
                 });
+
+
+                $("#tableAll").on("click", ".e-gt", function () { 
+                    // $('#epersediaan').modal('hide'); 
+                    const id = $(this).data("id");  
+
+                    Swal.fire({
+                                title: 'Are you sure?',
+                                html: '',
+                                icon: 'warning',
+                                showCancelButton: true,
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Edit'
+                            }).then((result) => {
+                                    if (result.isConfirmed) {   
+                                        window.location.replace("/anggota/edit/" + id); 
+                                    } else{
+                                        // $('#epersediaan').modal('show'); 
+                                    }
+                            });  
+
+                });
+
+                $("#tableAll").on("click", ".d-gt", function () { 
+                    // $('#epersediaan').modal('hide'); 
+                    const id = $(this).data("id");  
+
+                    Swal.fire({
+                                title: 'Are you sure?',
+                                html: '',
+                                icon: 'warning',
+                                showCancelButton: true,
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Hapus'
+                            }).then((result) => {
+                                    if (result.isConfirmed) {   
+                                        window.location.replace("/anggota/hapus/" + id); 
+                                    } else{
+                                        // $('#epersediaan').modal('show'); 
+                                    }
+                            });  
+
+                });
+
+ 
+
+
     </script>
 
 

@@ -1,5 +1,5 @@
 <?php 
-/* namespace App\Database\Migrations;
+namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
@@ -19,10 +19,10 @@ class Tbl_presensi extends Migration{
         // 		],
         // ]);
         // $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('tbl_presensi');
+        // $this->forge->createTable('tbl_presensi');
     }
 
     public function down(){
-        $this->forge->dropTable('tbl_presensi');
+        // $this->forge->dropTable('tbl_presensi');
     }
-} */
+}

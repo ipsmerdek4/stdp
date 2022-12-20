@@ -1,5 +1,5 @@
 <?php 
-/* namespace App\Database\Migrations;
+namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
@@ -19,10 +19,10 @@ class Tbl_iuran extends Migration{
         // 		],
         // ]);
         // $this->forge->addKey('id', TRUE);
-        $this->forge->createTable('tbl_iuran');
+        // $this->forge->createTable('tbl_iuran');
     }
 
     public function down(){
-        $this->forge->dropTable('tbl_iuran');
+        // $this->forge->dropTable('tbl_iuran');
     }
-} */
+}
