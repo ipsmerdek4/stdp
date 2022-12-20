@@ -55,7 +55,12 @@ $routes->get('/anggota/hapus/(:any)', 'Anggota::delete/$1');
  
 
 $routes->get('/presensi', 'Presensi::index');
+
+
+
 $routes->get('/kegiatan', 'Kegiatan::index');
+$routes->get('/kegiatan/boxview-kegiatan', 'Kegiatan::views_kegiatan');
+$routes->get('/kegiatan/create', 'Kegiatan::create');
 
 
 

@@ -1,11 +1,8 @@
 <?php 
 namespace App\Controllers;
 
-use App\Models\AnggotaModel;
-use App\Models\UserModel;
-
-
-
+use App\Models\AnggotaModel; 
+ 
 use \Hermawan\DataTables\DataTable;
 
 
