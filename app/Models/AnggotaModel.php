@@ -15,6 +15,8 @@ class AnggotaModel extends Model{
         'alamat',
         'foto',
         'log', 
-        'tanggal_masuk'
+        'tanggal_masuk',
+        'created_at_agt',
+        'updated_at_agt'
     ]; 
 }

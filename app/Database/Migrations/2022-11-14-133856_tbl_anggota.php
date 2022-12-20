@@ -14,7 +14,9 @@ class Tbl_anggota extends Migration{
             'alamat'                => [ 'type' => 'TEXT'], 
             'foto'                  => [ 'type' => 'TEXT'],  
             'log'                   => [ 'type' => 'TEXT'], 
-            'tanggal_masuk'         => [ 'type' => 'DATETIME', 'null' => true  ], 
+            'tanggal_masuk'         => [ 'type' => 'DATETIME', 'null' => true ],  
+            'created_at_agt'        => ['type' => 'datetime', 'null' => true],
+            'updated_at_agt'        => ['type' => 'datetime', 'null' => true], 
     
         ]);
         $this->forge->addPrimaryKey('id', true);  

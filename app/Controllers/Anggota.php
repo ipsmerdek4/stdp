@@ -195,12 +195,7 @@ class Anggota extends BaseController{
         $password = $this->request->getVar('password');  
  
 
-        $jabatanarry = [
-                '1' => 'Sekretaris',
-                '2' => 'Bendahara',
-                '3' => 'Ketua dan Wakil',
-                '4' => 'Anggota',
-        ];
+      
 
         // if ($newName == "") {
             $data1 = [
@@ -212,6 +207,7 @@ class Anggota extends BaseController{
                 'foto' => $newName,
                 'log' => $password.',',
                 'tanggal_masuk' => $date_anggota,
+                'created_at_agt'    => date("Y-m-d H:i:s")
             ];
             $data2 = [
                 'id'    => $id,
@@ -395,6 +391,7 @@ class Anggota extends BaseController{
                 // 'foto'              => $newName,
                 'log'               => $password.',',
                 'tanggal_masuk'     => $date_anggota,
+                'updated_at_agt'    => date("Y-m-d H:i:s")
             ];
 
             $Anggota->update($var, $data1);
@@ -421,6 +418,7 @@ class Anggota extends BaseController{
                 'foto'              => $newName,
                 'log'               => $password.',',
                 'tanggal_masuk'     => $date_anggota,
+                'updated_at_agt'    => date("Y-m-d H:i:s")
             ];
 
             $Anggota->update($var, $data1);
