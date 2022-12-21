@@ -47,6 +47,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                         <th class="text-sm-center">Nama Kegiatan</th> 
                                         <th class="text-sm-center">Tanggal Mulai</th> 
                                         <th class="text-sm-center">Tanggal Berakhir</th> 
+                                        <th class="text-sm-center">Rincian Kegiatan</th>   
                                         <th class="text-sm-center">Penerbit</th>   
                                         <th class="text-sm-center">Opsi</th> 
                                     </tr>
@@ -72,38 +73,22 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
     <!-- /.container-fluid -->
 
 
+ 
 
     <!-- View Modal-->
-    <div class="modal fade" id="v-gt" tabindex="-1" role="dialog" aria-labelledby="v-gt" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="v-ket-kgt" tabindex="-1" role="dialog" aria-labelledby="v-gt" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <h5 class="modal-title" id="exampleModalLabel">View Rincian Kegiatan</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="row text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Username    </div>
-                        <div class="col-12 col-sm-8 usr-angota">  username    </div>
-                    </div>    
-                    <div class="row mt-3 text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Email    </div>
-                        <div class="col-12 col-sm-8 eml-angota">  Email    </div>
-                    </div>    
-                    <div class="row mt-3 text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Password    </div>
-                        <div class="col-12 col-sm-8 pss-angota">  Password    </div>
-                    </div>      
-                    <div class="row mt-3 text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Tanggal Masuk    </div>
-                        <div class="col-12 col-sm-8 tgl-angota">  Tanggal Masuk    </div>
-                    </div>       
-                    <div class="row mt-3 text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Picture    </div>
-                        <div class="col-12 col-sm-8 foto-angota">   </div>
-                    </div>     
+                <div class="modal-body"> 
+                    <div class="w-100">
+                        <div class="view-rincian-kegiatan"></div> 
+                    </div>  
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button> 
@@ -111,7 +96,6 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
             </div>
         </div>
     </div>
-
 
 
 
@@ -179,7 +163,8 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     {data: '2', className: "text-center"},  
                                     {data: '3', className: "text-center"},  
                                     {data: '4', className: "text-center"},    
-                                    {data: '5', orderable: false, className: "text-center"},   
+                                    {data: '5', className: "text-center"},    
+                                    {data: '6', orderable: false, className: "text-center"},   
                                 ],    
                         });
 
@@ -188,29 +173,13 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
                 });
 
-                $("#tableAll").on("click", ".v-gt", function () {  
+                $("#tableAll").on("click", ".v-ket-kgt", function () {  
                     const id = $(this).data("id");  
-                    $.ajax({
-                        type: "post",
-                        url: "kegiatan/list-view-anggota",
-                        data: {id:id},
-                        dataType: "json",
-                        success: function (response) { 
-                            $.each(response, function (iii, vvv) {  
-                                $('.usr-angota').html(vvv.username);
-                                $('.eml-angota').html(vvv.email);
-                                $('.pss-angota').html(vvv.log);
-                                $('.tgl-angota').html(vvv.tanggal_masuk);
-                                $('.foto-angota').html('<img src="/Foto/anggota/'+ vvv.foto +'" alt="" class="img w-50 border rounded">'  );
-                            })
-
-
-                        }
-                    });
+                    $('.view-rincian-kegiatan').html(id);   
                 });
 
 
-                $("#tableAll").on("click", ".e-gt", function () { 
+                $("#tableAll").on("click", ".e-kgt", function () { 
                     // $('#epersediaan').modal('hide'); 
                     const id = $(this).data("id");  
 
@@ -223,7 +192,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Edit'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/anggota/edit/" + id); 
+                                        window.location.replace("/kegiatan/edit/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }
@@ -231,7 +200,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
                 });
 
-                $("#tableAll").on("click", ".d-gt", function () { 
+                $("#tableAll").on("click", ".d-kgt", function () { 
                     // $('#epersediaan').modal('hide'); 
                     const id = $(this).data("id");  
 
@@ -244,7 +213,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Hapus'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/anggota/hapus/" + id); 
+                                        window.location.replace("/kegiatan/hapus/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }

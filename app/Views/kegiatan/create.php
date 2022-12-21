@@ -35,31 +35,50 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
                         <form action="<?= base_url('/kegiatan/tambah')?>" method="post" enctype="multipart/form-data">
                             <div class="row">
-                                <div class=" offset-xl-2 col-12 col-sm col-xl-4"> 
+                                <div class="offset-xl-2  col-12 col-sm col-xl-4">  
                                     <div class="form-group">
-                                        <label class="<?= ($data['validation']->hasError('nama_anggota')) ? 'text-danger' : 'text-primary' ?>">Nama Kegiatan</label>
-                                        <textarea rows="5" placeholder="...." class="form-control <?= ($data['validation']->hasError('nama_anggota')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>"></textarea> 
+                                        <label class="<?= ($data['validation']->hasError('kegiatan')) ? 'text-danger' : 'text-primary' ?>">Nama Kegiatan</label>
+                                        <input name="kegiatan" type="text" class="form-control <?= ($data['validation']->hasError('kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="..."> 
                                         <small class="text-danger  ">  
-                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('nama_anggota')) ?>
-                                        </small>  
-                                    </div> 
-                                </div> 
-                                <div class=" col-12 col-sm col-xl-4"> 
-                                    <div class="form-group">
-                                        <label class="<?= ($data['validation']->hasError('date_anggota')) ? 'text-danger' : 'text-primary' ?>">Tanggal Mulai</label>
-                                        <input name="date_anggota" type="date" class="form-control <?= ($data['validation']->hasError('date_anggota')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="..."> 
-                                        <small class="text-danger  ">  
-                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('date_anggota')) ?>
-                                        </small>  
-                                    </div>  
-                                    <div class="form-group">
-                                        <label class="<?= ($data['validation']->hasError('date_anggota')) ? 'text-danger' : 'text-primary' ?>">Tanggal Berakhir</label>
-                                        <input name="date_anggota" type="date" class="form-control <?= ($data['validation']->hasError('date_anggota')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="..."> 
-                                        <small class="text-danger  ">  
-                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('date_anggota')) ?>
+                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('kegiatan')) ?>
                                         </small>  
                                     </div>  
                                 </div>  
+                                <div class=" col-12 col-sm col-xl-4">  
+                                </div>  
+
+
+                                <div class=" offset-xl-2 col-12 col-sm col-xl-4"> 
+                                    <div class="form-group">
+                                        <label class="<?= ($data['validation']->hasError('str_date')) ? 'text-danger' : 'text-primary' ?>">Tanggal Mulai</label>
+                                        <input name="str_date" type="date" class="form-control <?= ($data['validation']->hasError('str_date')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="..."> 
+                                        <small class="text-danger  ">  
+                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('str_date')) ?>
+                                        </small>  
+                                    </div>  
+                                </div> 
+                                <div class=" col-12 col-sm col-xl-4"> 
+                                    <div class="form-group">
+                                        <label class="<?= ($data['validation']->hasError('brk_date')) ? 'text-danger' : 'text-primary' ?>">Tanggal Berakhir</label>
+                                        <input name="brk_date" type="date" class="form-control <?= ($data['validation']->hasError('brk_date')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="..."> 
+                                        <small class="text-danger  ">  
+                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('brk_date')) ?>
+                                        </small>  
+                                    </div>  
+                                </div>  
+                                <div class="offset-xl-2  col-12 col-sm col-xl-8">  
+                                        <div class="form-group">
+                                            <label class="<?= ($data['validation']->hasError('ket_kegiatan')) ? 'text-danger' : 'text-primary' ?>">Keterangan Kegiatan</label>
+                                            <textarea name="ket_kegiatan" id="ket_kegiatan" placeholder="...." class=" form-control <?= ($data['validation']->hasError('ket_kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>"></textarea> 
+                                            <small class="text-danger  ">  
+                                                <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('ket_kegiatan')) ?>
+                                            </small>  
+                                        </div> 
+                                </div>  
+
+
+
+
                                 <div class=" offset-lg-2 col-lg-8 text-right  ">
                                     <hr class="border border-primary">
                                     <a href="<?=base_url('kegiatan')?>" class="btn btn-danger btn-sm">Kembali</a> 
@@ -80,59 +99,13 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
     </div>
     <!-- /.container-fluid -->
 
-
-
-    <!-- View Modal-->
-    <div class="modal fade" id="v-gt" tabindex="-1" role="dialog" aria-labelledby="v-gt" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Username    </div>
-                        <div class="col-12 col-sm-8 usr-angota">  username    </div>
-                    </div>    
-                    <div class="row mt-3 text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Email    </div>
-                        <div class="col-12 col-sm-8 eml-angota">  Email    </div>
-                    </div>    
-                    <div class="row mt-3 text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Password    </div>
-                        <div class="col-12 col-sm-8 pss-angota">  Password    </div>
-                    </div>      
-                    <div class="row mt-3 text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Tanggal Masuk    </div>
-                        <div class="col-12 col-sm-8 tgl-angota">  Tanggal Masuk    </div>
-                    </div>       
-                    <div class="row mt-3 text-center text-sm-left">
-                        <div class="col-12 col-sm-4 font-weight-bold">  Picture    </div>
-                        <div class="col-12 col-sm-8 foto-angota">   </div>
-                    </div>     
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button> 
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
+  
  
 <?= $this->endSection() ?> 
 <!--  -->
 <?= $this->section('styles') ?>
         <link rel="stylesheet" type="text/css" href="<?= base_url('Asset/datatables') ?>/datatables.css"/>  
-
+ 
         <style>
 
         </style>
@@ -142,73 +115,28 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 <!--  -->
 <?= $this->section('javascript') ?>
     <script type="text/javascript" src="<?= base_url('Asset/datatables') ?>/datatables.js"></script>            
-
+    <script src="<?= base_url('Asset/editor/ckeditor4/ckeditor.js') ?>"></script> 
+    <script src="<?= base_url('Asset/editor/ckfinder/ckfinder.js') ?>"></script> 
 
     <script>
-   
-                $(document).ready(function() {
-                        // table Persediaan
-                        $('#tableAll').DataTable({  
-                                lengthMenu: [
-                                    [5, 10, 25, 50, -1],
-                                    [5, 10, 25, 50, 'All'],
-                                ],   
-                                responsive: true,
-                                processing: true,
-                                serverSide: true,
-                                order: [[ 2, 'asc' ],],  
-                                ajax: "/anggota/boxview-anggota", 
-                                columns: [
-                                    {data: '0', orderable: false, className: "text-center"}, 
-                                    {data: '1', className: "text-center"}, 
-                                    {data: '2', className: "text-center"},  
-                                    {data: '3', className: "text-center"},  
-                                    {data: '4', className: "text-center"},  
-                                    {data: '5', className: "text-center"},    
-                                    {data: '6', orderable: false, className: "text-center"},   
-                                ],    
-                        }); 
 
-                });
+                var editor = CKEDITOR.replace( 'ket_kegiatan', {
+                    toolbar: [
+                        { name: 'document',
+                            items: [ 'Source', '-' ] 
+                        },	 
+                        [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ],				
+                        { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+                        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },	
+                        { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },																		 
+                        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
+                        { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
 
-                $("#tableAll").on("click", ".v-gt", function () {  
-                    const id = $(this).data("id");  
-                    $.ajax({
-                        type: "post",
-                        url: "anggota/list-view-anggota",
-                        data: {id:id},
-                        dataType: "json",
-                        success: function (response) { 
-                            $.each(response, function (iii, vvv) {  
-                                $('.usr-angota').html(vvv.username);
-                                $('.eml-angota').html(vvv.email);
-                                $('.pss-angota').html(vvv.log);
-                                $('.tgl-angota').html(vvv.tanggal_masuk);
-                                $('.foto-angota').html('<img src="/Foto/anggota/'+ vvv.foto +'" alt="" class="img w-50 border rounded">'  );
-                            })
-
-
-                        }
-                    });
-                });
-
-
-
-                
-                var loadFile = function(event) {
-                    var output = document.getElementById('output');
-                    output.src = URL.createObjectURL(event.target.files[0]);
-                    output.onload = function() {
-                    URL.revokeObjectURL(output.src) // free memory
-                    }
-                };
-
-
-
-
-
-
-
+                    ]
+                }); 
+                CKEDITOR.config.extraPlugins='colorbutton';
+                CKFinder.setupCKEditor();
+ 
     </script>
 
 

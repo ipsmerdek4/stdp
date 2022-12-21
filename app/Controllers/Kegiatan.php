@@ -26,33 +26,50 @@ class Kegiatan extends BaseController{
     public function views_kegiatan()
     {
         $Kegiatan = new KegiatanModel(); 
-        $builder = $Kegiatan; 
+        $builder = $Kegiatan
+                    ->join('tbl_anggota', 'tbl_kegiatan.anggota_id = tbl_anggota.id')
+                    ->select('
+                    tbl_kegiatan.nama_kgt as nama_kgt,  
+                    tbl_kegiatan.tgl_start_kgt as tgl_start_kgt, 
+                    tbl_kegiatan.tgl_end_kgt as tgl_end_kgt, 
+                    tbl_kegiatan.keterangan_kgt as keterangan_kgt,
+                    tbl_anggota.nama_lengkap as nama_lengkap,  
+                    tbl_kegiatan.id as kegiatan_id'
+                    ); 
 
             return DataTable::of($builder)
                 ->addNumbering('no')  
-                 /*  ->edit('active', function($row){
-                    if ($row->active == 1) {
-                        $v = '<span class="badge badge-success">Active</span>';
-                    } else {
-                        $v = '<span class="badge badge-danger">No Active</span>'; 
-                    }
-                    return $v;
-                })   */
+                ->edit('tgl_end_kgt', function($row){
+                    $vv = explode(' ', $row->tgl_end_kgt);
+                    $vvv = explode('-', $vv[0]);
+                    $v = '<p class="font-weight-bold">'.$vvv[2].'-'.$vvv[1].'-'.$vvv[0].'</p>';
+                    return $v ;
+                })  
+                ->edit('tgl_start_kgt', function($row){
+                    $vv = explode(' ', $row->tgl_start_kgt);
+                    $vvv = explode('-', $vv[0]);
+                    $v = '<p class="font-weight-bold mx-auto" style="width:95px">'.$vvv[2].'-'.$vvv[1].'-'.$vvv[0].'</p>';
+                    return $v ;
+                })  
+                ->edit('keterangan_kgt', function($row){
+
+                    $v  =  '<a href="javascript:void(0)" data-id="'. $row->keterangan_kgt .'" class="btn btn-warning btn-sm pt-1 v-ket-kgt" data-toggle="modal"  data-target="#v-ket-kgt"  data-backdrop="static" data-keyboard="false" style="width:33px;">
+                                <i class="fa-solid fa-up-right-from-square fa-sw"></i>
+                            </a>'; 
+                    return $v ;
+                })  
                 ->add('action', function($row){
                     return    ' 
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="javascript:void(0)" data-id="'. $row->user_id .'" class="btn btn-warning btn-sm pt-1 v-gt" data-toggle="modal"  data-target="#v-gt"  data-backdrop="static" data-keyboard="false" style="width:33px;">
-                                <i class="fa-solid fa-ellipsis-vertical fa-sm"></i>
-                            </a> 
-                            <a href="javascript:void(0)" data-id="'. $row->user_id .'" class="btn btn-success btn-sm pt-1 e-gt" style="width:33px;">
+                            <div class="btn-group" role="group" aria-label="Basic example"> 
+                            <a href="javascript:void(0)" data-id="'. $row->kegiatan_id .'" class="btn btn-success btn-sm pt-1 e-kgt" style="width:33px;">
                                 <i class="fa-solid fa-pen-to-square fa-sm"></i>
                             </a> 
-                            <a data-id="'. $row->user_id .'" href="javascript:void(0)" class="btn btn-danger btn-sm pt-1 d-gt" style="width:33px;">
+                            <a data-id="'. $row->kegiatan_id .'" href="javascript:void(0)" class="btn btn-danger btn-sm pt-1 d-kgt" style="width:33px;">
                                 <i class="fa-solid fa-trash-xmark fa-sm"></i>
                             </a>
                             </div> ';
                 })    
-                ->hide('user_id') 
+                ->hide('kegiatan_id') 
                 ->toJson();  
 
     }   
@@ -70,7 +87,172 @@ class Kegiatan extends BaseController{
     }
 
 
+    public function pogress()
+    {
+         
 
+ 
+        if (!$this->validate([  
+            'kegiatan'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Kegiatan Harus di isi.', 	 
+                    ]
+            ], 
+            'ket_kegiatan'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Ketarangan Kegiatan Harus di isi.', 	 
+                    ]
+            ], 
+            'str_date'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Tanggal Mulai Harus di isi.', 	 
+                    ]
+            ], 
+            'brk_date'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Tanggal Berakhir Harus di isi.', 	 
+                    ]
+            ], 
+        ])) {
+            $validation = \Config\Services::validation();  
+            return redirect()->to('/kegiatan/create')->withInput();
+        }
+  
+ 
+
+        $kegiatan       = $this->request->getVar('kegiatan'); 
+        $ket_kegiatan   = $this->request->getVar('ket_kegiatan'); 
+        $str_date       = $this->request->getVar('str_date'); 
+        $brk_date       = $this->request->getVar('brk_date');  
+ 
+            $data1 = [ 
+                'nama_kgt'          => $kegiatan,
+                'keterangan_kgt'    => $ket_kegiatan,
+                'anggota_id'       => user_id(),
+                'tgl_start_kgt'     => $str_date,
+                'tgl_end_kgt'       => $brk_date,
+                'created_at_kgt'    => date("Y-m-d H:i:s"),
+                'updated_at_kgt'    => null 
+            ];
+ 
+            $Kegiatan = new KegiatanModel();
+            $Kegiatan->insert($data1);  
+
+            session()->setFlashdata('msg_sccs', 'Berhasil Menambah Data Kegiatan.');
+            return redirect()->to(base_url('kegiatan'))->withInput();  
+  
+
+
+
+    }
+
+    
+    public function edit($var)
+    { 
+        
+
+        $Kegiatan = new KegiatanModel(); 
+        $builder = $Kegiatan
+                        ->join('tbl_anggota', 'tbl_kegiatan.anggota_id = tbl_anggota.id')
+                        ->select('
+                                tbl_kegiatan.nama_kgt as nama_kgt,  
+                                tbl_kegiatan.tgl_start_kgt as tgl_start_kgt, 
+                                tbl_kegiatan.tgl_end_kgt as tgl_end_kgt, 
+                                tbl_kegiatan.keterangan_kgt as keterangan_kgt,
+                                tbl_anggota.nama_lengkap as nama_lengkap,  
+                                tbl_kegiatan.id as kegiatan_id'
+                        )
+                        ->where('tbl_kegiatan.id', $var)
+                        ->first();                 
+
+
+        session();
+        $data = [   
+            'data'              => $builder,
+            'validation' 		=> \Config\Services::validation(), 
+        ];
+
+        return view('kegiatan/edit', compact('data')); 
+    }
+
+
+
+    public function progres_update($var)
+    {
+        
+ 
+        if (!$this->validate([  
+            'kegiatan'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Kegiatan Harus di isi.', 	 
+                    ]
+            ], 
+            'ket_kegiatan'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Ketarangan Kegiatan Harus di isi.', 	 
+                    ]
+            ], 
+            'str_date'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Tanggal Mulai Harus di isi.', 	 
+                    ]
+            ], 
+            'brk_date'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Tanggal Berakhir Harus di isi.', 	 
+                    ]
+            ], 
+        ])) {
+            $validation = \Config\Services::validation();  
+            return redirect()->to('/kegiatan/edit/'.$var)->withInput();
+        }
+    
+            $kegiatan       = $this->request->getVar('kegiatan'); 
+            $ket_kegiatan   = $this->request->getVar('ket_kegiatan'); 
+            $str_date       = $this->request->getVar('str_date'); 
+            $brk_date       = $this->request->getVar('brk_date');  
+ 
+            $data1 = [ 
+                'nama_kgt'          => $kegiatan,
+                'keterangan_kgt'    => $ket_kegiatan,
+                'anggota_id'        => user_id(),
+                'tgl_start_kgt'     => $str_date,
+                'tgl_end_kgt'       => $brk_date, 
+                'updated_at_kgt'    => date("Y-m-d H:i:s")  
+            ];
+
+
+            $Kegiatan = new KegiatanModel();  
+            $Kegiatan->update($var, $data1);
+
+          
+
+        session()->setFlashdata('msg_sccs', 'Berhasil Merubah Data Kegiatan.');
+        return redirect()->to(base_url('/kegiatan'));
+
+
+
+    }
+ 
+    public function delete($var)
+    {
+        
+        $Kegiatan = new KegiatanModel();    
+        $Kegiatan->delete($var);  
+ 
+        session()->setFlashdata('msg_sccs', 'Berhasil Menghapus Data Kegiatan.');
+        return redirect()->to(base_url('/kegiatan'));
+
+
+    }
 
 
 

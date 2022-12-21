@@ -9,14 +9,16 @@ class Tbl_kegiatan extends Migration{
         // Uncomment below if want config
         $this->forge->addField([
             'id'                    => [ 'type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true ],
-            'nama_kgt'              => [ 'type' => 'TEXT'], 
-            'nama_pencetak_kgt'     => [ 'type' => 'VARCHAR', 'constraint' => 254], 
+            'nama_kgt'              => [ 'type' => 'VARCHAR', 'constraint' => 254], 
+            'keterangan_kgt'        => [ 'type' => 'TEXT'], 
+            'anggota_id'            => [ 'type' => 'int', 'constraint' => 11, 'unsigned' => true, ],
             'tgl_start_kgt'         => [ 'type' => 'DATETIME', 'null' => true  ], 
             'tgl_end_kgt'           => [ 'type' => 'DATETIME', 'null' => true  ], 
-            'created_at_kgt'        => ['type' => 'datetime', 'null' => true],
-            'updated_at_kgt'        => ['type' => 'datetime', 'null' => true],  
+            'created_at_kgt'        => [ 'type' => 'datetime', 'null' => true],
+            'updated_at_kgt'        => [ 'type' => 'datetime', 'null' => true],  
         ]);
         $this->forge->addKey('id', TRUE);
+        $this->forge->addForeignKey('anggota_id', 'tbl_anggota', 'id', '', 'CASCADE');  
         $this->forge->createTable('tbl_kegiatan');
     }
 

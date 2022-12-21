@@ -11,7 +11,8 @@ class KegiatanModel extends Model{
     protected $allowedFields    = [
         'id',
         'nama_kgt',
-        'nama_pencetak_kgt',
+        'keterangan_kgt',
+        'anggota_id',
         'tgl_start_kgt',
         'tgl_end_kgt',  
         'created_at_kgt',

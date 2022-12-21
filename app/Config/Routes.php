@@ -61,6 +61,10 @@ $routes->get('/presensi', 'Presensi::index');
 $routes->get('/kegiatan', 'Kegiatan::index');
 $routes->get('/kegiatan/boxview-kegiatan', 'Kegiatan::views_kegiatan');
 $routes->get('/kegiatan/create', 'Kegiatan::create');
+$routes->post('/kegiatan/tambah', 'Kegiatan::pogress');
+$routes->get('/kegiatan/edit/(:any)', 'Kegiatan::edit/$1');
+$routes->post('/kegiatan/ubah/(:any)', 'Kegiatan::progres_update/$1');
+$routes->get('/kegiatan/hapus/(:any)', 'Kegiatan::delete/$1');
 
 
 
