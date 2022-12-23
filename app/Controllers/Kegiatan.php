@@ -85,8 +85,7 @@ class Kegiatan extends BaseController{
         return view('kegiatan/create', compact('data')); 
 
     }
-
-
+ 
     public function pogress()
     {
          
@@ -126,13 +125,15 @@ class Kegiatan extends BaseController{
 
         $kegiatan       = $this->request->getVar('kegiatan'); 
         $ket_kegiatan   = $this->request->getVar('ket_kegiatan'); 
+        $ket_kegiatan1   = str_replace("../Asset/textarea_editor/source", "/Asset/textarea_editor/source", $ket_kegiatan  );
+        
         $str_date       = $this->request->getVar('str_date'); 
         $brk_date       = $this->request->getVar('brk_date');  
  
             $data1 = [ 
                 'nama_kgt'          => $kegiatan,
-                'keterangan_kgt'    => $ket_kegiatan,
-                'anggota_id'       => user_id(),
+                'keterangan_kgt'    => $ket_kegiatan1,
+                'anggota_id'        => user_id(),
                 'tgl_start_kgt'     => $str_date,
                 'tgl_end_kgt'       => $brk_date,
                 'created_at_kgt'    => date("Y-m-d H:i:s"),
@@ -143,14 +144,13 @@ class Kegiatan extends BaseController{
             $Kegiatan->insert($data1);  
 
             session()->setFlashdata('msg_sccs', 'Berhasil Menambah Data Kegiatan.');
-            return redirect()->to(base_url('kegiatan'))->withInput();  
+            return redirect()->to(base_url('kegiatan'))->withInput();   
   
 
 
 
     }
-
-    
+ 
     public function edit($var)
     { 
         
@@ -178,9 +178,7 @@ class Kegiatan extends BaseController{
 
         return view('kegiatan/edit', compact('data')); 
     }
-
-
-
+ 
     public function progres_update($var)
     {
         

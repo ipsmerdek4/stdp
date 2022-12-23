@@ -13,7 +13,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            <h1 class="h3 mb-0 text-gray-800">Anggota</h1>
+            <h1 class="h3 mb-0 text-gray-800">Kegiatan</h1>
 
             <a href="<?= base_url('kegiatan/create') ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
                 <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 

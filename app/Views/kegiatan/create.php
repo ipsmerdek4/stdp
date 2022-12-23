@@ -116,110 +116,42 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 <?= $this->section('javascript') ?>
     <script type="text/javascript" src="<?= base_url('Asset/datatables') ?>/datatables.js"></script>            
     <script src="<?= base_url('Asset/textarea_editor/tinymce/tinymce.min.js') ?>"></script> 
-    <script src="<?= base_url('Asset/textarea_editor/tinymce/init.js') ?>"></script> 
-     <!-- <script src="<?= base_url('Asset/editor/ckeditor4/ckeditor.js') ?>"></script>  -->
-    <!-- <script src="<?= base_url('Asset/editor/ckfinder/ckfinder.js') ?>"></script>  -->
+    <script src="<?= base_url('Asset/textarea_editor/tinymce/init.js') ?>"></script>  
 
-    <script>
+    <script>        
+            tinymce.init({
+                    selector: "textarea",theme: "modern", height: 00,
+                    plugins: [
+                            "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+                            "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
+                            "table contextmenu directionality emoticons paste textcolor responsivefilemanager code"
+                    ],
+                    toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
+                    toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
+                    image_advtab: true ,
+
+                    /* file_browser_callback:  function (field_name, url, type, win) { 
+                        tinyMCE.activeEditor.windowManager.open({
+                            // file : cmsURL,
+                            title : 'My File Browser',
+                            width : 420,  // Your dimensions may differ - toy around with them!
+                            height : 400,
+                            url : '/Asset/textarea_editor/filemanager/dialog.php?type=1&field_id=' + field_name,
+                            
+                        }, {
+                            window : win,
+                            input : field_name
+                        });
+                        return false;
+                    },
+                    */
+                    external_filemanager_path:"/Asset/textarea_editor/filemanager/",
+                    filemanager_title:"My File Browser" , 
+                    external_plugins: { "filemanager" : "/Asset/textarea_editor/filemanager/plugin.min.js"},
+
+                });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//                 var editor = CKEDITOR.replace( 'ket_kegiatan', { 
-//                     toolbar: [
-//                         { name: 'document',
-//                             items: [ 'Source', '-' ] 
-//                         },	 
-//                         [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ],				
-//                         { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-//                         { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },	
-//                         { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },																		 
-//                         { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
-//                         { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-						 
-//                     ], 
-// 					filebrowserBrowseUrl: '/browser/browse.php',
-// 					filebrowserImageBrowseUrl: '/browser/browse.php?type=Images',
-// 					filebrowserUploadUrl: '/uploader/upload.php',
-// 					filebrowserImageUploadUrl: '/uploader/upload.php?type=Images'
-					 
-//                 }); 
-				
-				
-// // Let's wait for CKEditor is initialized...
-// editor.on('instanceReady', function () {
-//     // ...and get Flmngr API
-//     editor.getFlmngr((Flmngr) => {
-//         // In this demo we pass Flmngr API into inner functions and callbacks.
-//         // You can save it somewhere and reuse without passing as an argument.
-//         attachOnClickListenerToButton(Flmngr);
-//     });
-// });
-// function attachOnClickListenerToButton(Flmngr) {
-//     let elBtn = document.getElementById("btn");
-//     // Style button as ready to be pressed
-//     elBtn.style.opacity = 1;
-//     elBtn.style.cursor = "pointer";
-//     let elLoading = document.getElementById("loading");
-//     elLoading.parentElement.removeChild(elLoading);
-//     // Add a listener for selecting files
-//     elBtn.addEventListener("click", () => {
-//         selectFiles(Flmngr);
-//     });
-// }
-// function selectFiles(Flmngr) {
-//     // Collect URLs of images of existing gallery set
-//     let elsExistingImages = document.querySelectorAll("#images img");
-//     let urls = [];
-//     for (let i = 0; i < elsExistingImages.length; i++)
-//         urls.push(elsExistingImages.item(i).src);
-//     Flmngr.open({
-//         list: urls,
-//         isMultiple: true,
-//         acceptExtensions: ["png", "jpeg", "jpg", "webp", "gif"],
-//         onFinish: (files) => {
-//             showSelectedImages(Flmngr, files);
-//         }
-//     });
-// }
-// function showSelectedImages(Flmngr, files) {
-//     let elImages = document.getElementById("images");
-//     elImages.innerHTML = "";
-//     /*let elP =  document.createElement("p");
-//     elP.textContent = files.length + " images selected";
-//     elImages.appendChild(elP);*/
-//     for (let file of files) {
-//         let urlOriginal = Flmngr.getNoCacheUrl(file.url);
-//         let el = document.createElement("div");
-//         el.className = "image";
-//         elImages.appendChild(el);
-//         let elDiv = document.createElement("div");
-//         el.appendChild(elDiv);
-//         let elImg = document.createElement("img");
-//         elImg.src = urlOriginal;
-//         elImg.alt = "Image selected in Flmngr";
-//         elDiv.appendChild(elImg);
-//         let elP = document.createElement("p");
-//         elP.textContent = file.url;
-//         el.appendChild(elP);
-//     }
-// }
-				
-                //CKEDITOR.config.extraPlugins='colorbutton';
-                //CKFinder.setupCKEditor();
- 
     </script>
 
 

@@ -111,31 +111,45 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 <?= $this->endSection() ?>
 <!--  -->
 <?= $this->section('javascript') ?>
-    <script type="text/javascript" src="<?= base_url('Asset/datatables') ?>/datatables.js"></script>            
-    <script src="<?= base_url('Asset/editor/ckeditor4/ckeditor.js') ?>"></script> 
-    <script src="<?= base_url('Asset/editor/ckfinder/ckfinder.js') ?>"></script> 
+    <script type="text/javascript" src="<?= base_url('Asset/datatables') ?>/datatables.js"></script>           
+    <script src="<?= base_url('Asset/textarea_editor/tinymce/tinymce.min.js') ?>"></script> 
+    <script src="<?= base_url('Asset/textarea_editor/tinymce/init.js') ?>"></script>  
 
-    <script>
+    <script>        
+            tinymce.init({
+                    selector: "textarea",theme: "modern", height: 00,
+                    plugins: [
+                            "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+                            "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
+                            "table contextmenu directionality emoticons paste textcolor responsivefilemanager code"
+                    ],
+                    toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
+                    toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
+                    image_advtab: true ,
 
-                var editor = CKEDITOR.replace( 'ket_kegiatan', {
-                    toolbar: [
-                        { name: 'document',
-                            items: [ 'Source', '-' ] 
-                        },	 
-                        [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ],				
-                        { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-                        { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },	
-                        { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },																		 
-                        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
-                        { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+                    /* file_browser_callback:  function (field_name, url, type, win) { 
+                        tinyMCE.activeEditor.windowManager.open({
+                            // file : cmsURL,
+                            title : 'My File Browser',
+                            width : 420,  // Your dimensions may differ - toy around with them!
+                            height : 400,
+                            url : '/Asset/textarea_editor/filemanager/dialog.php?type=1&field_id=' + field_name,
+                            
+                        }, {
+                            window : win,
+                            input : field_name
+                        });
+                        return false;
+                    },
+                    */
+                    external_filemanager_path:"/Asset/textarea_editor/filemanager/",
+                    filemanager_title:"My File Browser" , 
+                    external_plugins: { "filemanager" : "/Asset/textarea_editor/filemanager/plugin.min.js"},
 
-                    ]
-                }); 
-                CKEDITOR.config.extraPlugins='colorbutton';
-                CKFinder.setupCKEditor();
- 
+                });
+
+
     </script>
-
 
 
 <?= $this->endSection() ?>

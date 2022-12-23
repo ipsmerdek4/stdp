@@ -55,6 +55,9 @@ $routes->get('/anggota/hapus/(:any)', 'Anggota::delete/$1');
  
 
 $routes->get('/presensi', 'Presensi::index');
+$routes->post('/presensi/tambah', 'Presensi::pogress');
+$routes->get('/presensi/view', 'Presensi::view');
+$routes->get('/presensi/view/boxview-presensi', 'Presensi::views_');
 
 
 
