@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Models\PresensiModel;
 use \Hermawan\DataTables\DataTable;
 use App\Models\KegiatanModel;
+use App\Models\AnggotaModel;
 
 
 class Presensi extends BaseController{
@@ -19,22 +20,37 @@ class Presensi extends BaseController{
 
     public function index()
     {
-        $Kegiatan = new KegiatanModel();
+         
+        return view('presensi/index' ); 
+        
+    }
 
+    public function create()
+    {
+        
+        $Kegiatan = new KegiatanModel();
+        $Anggota = new AnggotaModel();
 
         session();
         $data = [   
+            'anggota'           => $Anggota->findAll(),
             'kegiatan'          => $Kegiatan->findAll(),
             'validation' 		=> \Config\Services::validation(), 
         ];
 
-        return view('presensi/index', compact('data')); 
+        return view('presensi/create', compact('data')); 
     }
 
     public function pogress()
     {
         
         if (!$this->validate([  
+            'anggota'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Anggota Harus di Pilih.', 	 
+                    ]
+            ],  
             'kegiatan'    =>  [ 
                 'ruler'   => 'required' ,
                 'errors'    => [
@@ -43,14 +59,15 @@ class Presensi extends BaseController{
             ],  
         ])) {
             $validation = \Config\Services::validation();  
-            return redirect()->to('/presensi')->withInput();
+            return redirect()->to('/presensi/create')->withInput();
         }
         
+        $anggota = $this->request->getVar('anggota'); 
         $kegiatan = $this->request->getVar('kegiatan'); 
         $waktu = date("Y-m-d H:i:s"); 
 
         $data1 = [ 
-            'anggota_id'            => user_id(),
+            'anggota_id'            => $anggota,
             'kegiatan_id'           => $kegiatan,
             'created_at_prsn'       => $waktu, 
             'updated_at_prsn'       => null 
@@ -69,20 +86,7 @@ class Presensi extends BaseController{
 
     }
 
-    public function view()
-    {
-        $Kegiatan = new KegiatanModel();
-
-
-        session();
-        $data = [   
-            'kegiatan'          => $Kegiatan->findAll(),
-            'validation' 		=> \Config\Services::validation(), 
-        ];
-        return view('presensi/view', compact('data')); 
-    }
-
-    
+  
     public function views_()
     {
         $Presensi = new PresensiModel(); 
@@ -127,6 +131,87 @@ class Presensi extends BaseController{
 
     }   
 
+
+
+    public function edit($var)
+    { 
+        
+        $Kegiatan = new KegiatanModel();
+        $Anggota = new AnggotaModel();
+        $Presensi = new PresensiModel(); 
+        $builder = $Presensi 
+                        ->where('id', $var)
+                        ->first();                 
+
+
+        session();
+        $data = [   
+            'anggota'           => $Anggota->findAll(),
+            'kegiatan'          => $Kegiatan->findAll(),
+            'data'              => $builder,
+            'validation' 		=> \Config\Services::validation(), 
+        ];
+
+        return view('presensi/edit', compact('data')); 
+    }
+
+
+
+    public function progres_update($var)
+    {
+        
+ 
+        if (!$this->validate([  
+            'anggota'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Anggota Harus di Pilih.', 	 
+                    ]
+            ],  
+            'kegiatan'    =>  [ 
+                'ruler'   => 'required' ,
+                'errors'    => [
+                    'required'  => 'Kegiatan Harus di Pilih.', 	 
+                    ]
+            ],  
+        ])) {
+            $validation = \Config\Services::validation();  
+            return redirect()->to('/presensi/edit/'.$var)->withInput();
+        }
+    
+            $anggota = $this->request->getVar('anggota'); 
+            $kegiatan = $this->request->getVar('kegiatan');  
+
+            $data1 = [ 
+                'anggota_id'            => $anggota,
+                'kegiatan_id'           => $kegiatan, 
+                'updated_at_prsn'       => date("Y-m-d H:i:s") 
+            ];
+   
+
+            $Presensi = new PresensiModel();  
+            $Presensi->update($var, $data1);
+
+          
+
+        session()->setFlashdata('msg_sccs', 'Berhasil Merubah Data Absensi.');
+        return redirect()->to(base_url('/presensi'));
+
+
+
+    }
+
+    public function delete($var)
+    {
+        
+        $Presensi = new PresensiModel();  
+        $Presensi->delete($var);  
+ 
+        session()->setFlashdata('msg_sccs', 'Berhasil Menghapus Data Presensi.');
+        return redirect()->to(base_url('/presensi'));
+
+
+    }
 
 
 }
