@@ -13,7 +13,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            <h1 class="h3 mb-0 text-gray-800">Kegiatan</h1> 
+            <h1 class="h3 mb-0 text-gray-800">Iuran</h1> 
         </div>
 
     
@@ -27,58 +27,32 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Edit Kegiatan</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Edit Iuran</h6>
                         
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
 
-                        <form action="<?= base_url('/kegiatan/ubah/'.$data['data']->kegiatan_id)?>" method="post" enctype="multipart/form-data">
-                            <div class="row">
-                                <div class="offset-lg-2  col-12 col-lg-8 col-xl-4">  
+                        <form action="<?= base_url('/iuran/ubah/'.$data['data']->id)?>" method="post" enctype="multipart/form-data">
+                            <div class="row">  
+                                <div class=" offset-xl-4 col-12 col-sm col-xl-4">  
                                     <div class="form-group">
-                                        <label class="<?= ($data['validation']->hasError('kegiatan')) ? 'text-danger' : 'text-primary' ?>">Nama Kegiatan</label>
-                                        <input name="kegiatan" value="<?= $data['data']->nama_kgt ?>" type="text" class="form-control <?= ($data['validation']->hasError('kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="..."> 
+                                        <label class="<?= ($data['validation']->hasError('eiuran')) ? 'text-danger' : 'text-primary' ?>">Iuran Bulanan</label>
+                                        <input name="eiuran" type="text" 
+                                            class="rupiah2 form-control <?= ($data['validation']->hasError('eiuran')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" 
+                                            placeholder="Rp. " 
+                                            value="<?= "Rp. " . number_format($data['data']->nominal_iuran,0,',','.')  ?>"> 
                                         <small class="text-danger  ">  
-                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('kegiatan')) ?>
+                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('eiuran')) ?>
                                         </small>  
                                     </div>  
-                                </div>  
-                                <div class=" col-12 col-sm col-xl-4">  
-                                </div>  
+                                </div>   
 
 
-                                <div class=" offset-lg-2 col-12 col-lg-4 col-xl-4"> 
-                                    <div class="form-group">
-                                        <label class="<?= ($data['validation']->hasError('str_date')) ? 'text-danger' : 'text-primary' ?>">Tanggal Mulai</label>
-                                        <input name="str_date" value="<?=date("Y-m-d", strtotime($data['data']->tgl_start_kgt))?>" type="date" class="form-control <?= ($data['validation']->hasError('str_date')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="..."> 
-                                        <small class="text-danger  ">  
-                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('str_date')) ?>
-                                        </small>  
-                                    </div>  
-                                </div> 
-                                <div class=" col-12 col-lg-4 col-xl-4"> 
-                                    <div class="form-group">
-                                        <label class="<?= ($data['validation']->hasError('brk_date')) ? 'text-danger' : 'text-primary' ?>">Tanggal Berakhir</label>
-                                        <input name="brk_date" value="<?=date("Y-m-d", strtotime($data['data']->tgl_end_kgt))?>" type="date" class="form-control <?= ($data['validation']->hasError('brk_date')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="..."> 
-                                        <small class="text-danger  ">  
-                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('brk_date')) ?>
-                                        </small>  
-                                    </div>  
-                                </div>  
-                                <div class="offset-lg-2  col-12 col-lg-8 col-xl-8">  
-                                        <div class="form-group">
-                                            <label class="<?= ($data['validation']->hasError('ket_kegiatan')) ? 'text-danger' : 'text-primary' ?>">Keterangan Kegiatan</label>
-                                            <textarea name="ket_kegiatan" id="ket_kegiatan" placeholder="...." class=" form-control <?= ($data['validation']->hasError('ket_kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>"><?= $data['data']->keterangan_kgt ?></textarea> 
-                                            <small class="text-danger  ">  
-                                                <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('ket_kegiatan')) ?>
-                                            </small>  
-                                        </div> 
-                                </div>  
- 
+
                                 <div class=" offset-lg-2 col-lg-8 text-right  ">
                                     <hr class="border border-primary">
-                                    <a href="<?=base_url('kegiatan')?>" class="btn btn-danger btn-sm">Kembali</a> 
+                                    <a href="<?=base_url('iuran')?>" class="btn btn-danger btn-sm">Kembali</a> 
                                     <button type="submit" class="btn btn-primary btn-sm">Simpan</button> 
                                 </div>
                             </div> 
@@ -101,8 +75,8 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 <?= $this->endSection() ?> 
 <!--  -->
 <?= $this->section('styles') ?>
-        <link rel="stylesheet" type="text/css" href="<?= base_url('Asset/datatables') ?>/datatables.css"/>  
- 
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.css"/> 
+
         <style>
 
         </style>
@@ -111,42 +85,40 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 <?= $this->endSection() ?>
 <!--  -->
 <?= $this->section('javascript') ?>
-    <script type="text/javascript" src="<?= base_url('Asset/datatables') ?>/datatables.js"></script>           
-    <script src="<?= base_url('Asset/textarea_editor/tinymce/tinymce.min.js') ?>"></script> 
-    <script src="<?= base_url('Asset/textarea_editor/tinymce/init.js') ?>"></script>  
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.20/dist/sweetalert2.min.js"></script>        
 
-    <script>        
-            tinymce.init({
-                    selector: "textarea",theme: "modern", height: 00,
-                    plugins: [
-                            "advlist autolink link image lists charmap print preview hr anchor pagebreak",
-                            "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
-                            "table contextmenu directionality emoticons paste textcolor responsivefilemanager code"
-                    ],
-                    toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
-                    toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
-                    image_advtab: true ,
-
-                    /* file_browser_callback:  function (field_name, url, type, win) { 
-                        tinyMCE.activeEditor.windowManager.open({
-                            // file : cmsURL,
-                            title : 'My File Browser',
-                            width : 420,  // Your dimensions may differ - toy around with them!
-                            height : 400,
-                            url : '/Asset/textarea_editor/filemanager/dialog.php?type=1&field_id=' + field_name,
-                            
-                        }, {
-                            window : win,
-                            input : field_name
+    <script>    
+        
+            <?php if (!empty(session()->getFlashdata('error'))) : ?>    
+                Swal.fire({
+                            title: 'Warning',
+                            html: '<?php echo session()->getFlashdata('error'); ?>',
+                            icon: 'warning', 
                         });
-                        return false;
-                    },
-                    */
-                    external_filemanager_path:"/Asset/textarea_editor/filemanager/",
-                    filemanager_title:"My File Browser" , 
-                    external_plugins: { "filemanager" : "/Asset/textarea_editor/filemanager/plugin.min.js"},
 
-                });
+            <?php endif; ?>
+    
+        $('.rupiah2').keyup(function (e) {   
+            $('.rupiah2').val(formatRupiah(this.value, 'Rp. '));
+        }); 
+
+        /* Fungsi formatRupiah */
+        function formatRupiah(angka, prefix){
+            var number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split           = number_string.split(','),
+            sisa             = split[0].length % 3,
+            rupiah             = split[0].substr(0, sisa),
+            ribuan             = split[0].substr(sisa).match(/\d{3}/gi);
+ 
+            // tambahkan titik jika yang di input sudah menjadi angka satuan ribuan
+            if(ribuan){
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+ 
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+        }
 
 
     </script>

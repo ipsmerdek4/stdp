@@ -9,7 +9,7 @@ class Tbl_iuran extends Migration{
         $this->forge->addField([
             'id'                     => [ 'type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true ], 
             'anggota_id'             => [ 'type' => 'int', 'constraint' => 11, 'unsigned' => true, ],  
-            'tahun_iuran'            => [ 'type' => 'tinyint', 'constraint' => 6,],  
+            'tahun_iuran'            => [ 'type' => 'int', 'constraint' => 6,],  
             'bulan_iuran'            => [ 'type' => 'tinyint', 'constraint' => 2,],  
             'nominal_iuran'          => [ 'type' => 'bigint', 'constraint' => 20,],  
             'sts_iuran'              => [ 'type' => 'tinyint', 'constraint' => 2, ],  

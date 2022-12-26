@@ -15,7 +15,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
             <h1 class="h3 mb-0 text-gray-800">Iuran</h1>
 
-            <a href="<?= base_url('iuran/create') ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
+            <a href="<?= base_url('iuran/create/'.date("Y-m")) ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
                 <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
                 Tambah Iuran
             </a>
@@ -79,77 +79,45 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     </tr>
                                 </thead>
                                 <tbody> 
-                                    <?php
-                                        $bulanX = [
-                                            '1' => "Januari", 
-                                            '2' => "Februari", 
-                                            '3' => "Maret", 
-                                            '4' => "April", 
-                                            '5' => "Mei", 
-                                            '6' => "Juni", 
-                                            '7' => "Juli", 
-                                            '8' => "Agustus", 
-                                            '9' => "September", 
-                                            '10' => "Oktober", 
-                                            '11' => "November", 
-                                            '12' => "Desember"
-                                        ];   
-                    
-                                        for ($i=1; $i <= 12 ; $i++) {  
-                                            if ($data['countR'] == 0) {
+                                    <?php 
+                                        foreach ($data['iuran'] as $vviuran) {   
                                     ?> 
-                                                <tr>
-                                                    <td><?= $i ?></td>
-                                                    <td><?= $bulanX[$i] ?></td>
-                                                    <td><?= "Rp " . number_format(0,2,',','.') ?></td>
-                                                    <td><span class="badge badge-danger p-2">Belum<br>Membayar</span></td>
-                                                    <td>-</td> 
-                                                    <td> 
+                                            <tr>
+                                                <td><?= $vviuran['datem'] ?></td>
+                                                <td><?= $vviuran['bulan'] ?></td>
+                                                <td><?= "Rp " . number_format($vviuran['nominal_iuran'],2,',','.') ?></td>
+                                                <td> 
+                                                    <?php
+                                                    if ($vviuran['status'] == 0) {
+                                                        echo '<span class="badge badge-danger">Belum<br>Membayar</span>';
+                                                    }elseif ($vviuran['status'] == 1) {
+                                                        echo '<span class="badge badge-success p-2">Sudah<br>Membayar</span>';
+                                                    } 
+                                                    ?>
+                                                </td>
+                                                <td><?= $vviuran['tgl_bayar'] ?></td>
+                                                <td> 
+                                                    <?php
+                                                    if ($vviuran['status'] == 0) { ?> 
                                                         <div class="btn-group" role="group" aria-label="Basic example"> 
-                                                        <a href="<?= base_url('iuran/create') ?>" data-id=" " class="btn btn-success btn-sm pt-1" style="width:33px;">
-                                                            <i class="fa-solid fa-pen-to-square fa-sm"></i>
-                                                        </a> 
+                                                            <a href="<?= base_url('iuran/create/'.date("Y-").(($vviuran['datem'] < 10)? '0'.$vviuran['datem'] : $vviuran['datem'])) ?>" class="btn btn-success btn-sm pt-1" style="width:33px;">
+                                                                <i class="fa-solid fa-pen-to-square fa-sm"></i>
+                                                            </a>  
                                                         </div> 
-                                                    </td>
-                                                </tr>   
-                                    <?php   } else { 
-                                                foreach ($data['iuran'] as $vviuran) {  
-                                                    if ($vviuran['bulan'] == $bulanX[$i]) {  
-                                    ?> 
-                                                    <tr>
-                                                        <td><?= $i ?></td>
-                                                        <td><?= $bulanX[$i] ?></td>
-                                                        <td><?= "Rp " . number_format($vviuran['nominal_iuran'],2,',','.') ?></td>
-                                                        <td><?= $vviuran['status'] ?></td>
-                                                        <td><?= $vviuran['tgl_bayar'] ?></td>
-                                                        <td> 
-                                                            <div class="btn-group" role="group" aria-label="Basic example"> 
-                                                            <a href="javascript:void(0)" data-id=" " class="btn btn-success btn-sm pt-1 e-kgt" style="width:33px;">
+                                                    <?php }elseif ($vviuran['status'] == 1) { ?> 
+                                                        <div class="btn-group" role="group" aria-label="Basic example"> 
+                                                            <a href="javascript:void(0)" data-id="<?= $vviuran['id'] ?>" class="btn btn-success btn-sm pt-1 e-kgt" style="width:33px;">
                                                                 <i class="fa-solid fa-pen-to-square fa-sm"></i>
                                                             </a> 
-                                                            <a data-id=" " href="javascript:void(0)" class="btn btn-danger btn-sm pt-1 d-kgt" style="width:33px;">
+                                                            <a data-id="<?= $vviuran['id'] ?>" href="javascript:void(0)" class="btn btn-danger btn-sm pt-1 d-kgt" style="width:33px;">
                                                                 <i class="fa-solid fa-trash-xmark fa-sm"></i>
                                                             </a>
-                                                            </div> 
-                                                        </td>
-                                                    </tr>
-                                                <?php }else{ ?>
-                                                    <tr>
-                                                        <td><?= $i ?></td>
-                                                        <td><?= $bulanX[$i] ?></td>
-                                                        <td><?= "Rp " . number_format(0,2,',','.') ?></td>
-                                                        <td><span class="badge badge-danger p-2">Belum<br>Membayar</span></td>
-                                                        <td>-</td> 
-                                                        <td> 
-                                                            <div class="btn-group" role="group" aria-label="Basic example"> 
-                                                            <a href="javascript:void(0)" data-id=" " class="btn btn-success btn-sm pt-1" style="width:33px;">
-                                                                <i class="fa-solid fa-pen-to-square fa-sm"></i>
-                                                            </a> 
-                                                            </div> 
-                                                        </td>
-                                                    </tr> 
+                                                        </div> 
+                                                    <?php }  ?>
+                                                </td>
+                                            </tr> 
                                     <?php
-                                        } } } }  
+                                        }   
                                     ?>
                                 </tbody>  
                             </table>
@@ -255,21 +223,11 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     [ 0, 'asc' ],
                                 ],   
                         });
-
-
-
+ 
 
                 });
 
-
-
-
-
-
-                $("#tableAll").on("click", ".v-ket-kgt", function () {  
-                    const id = $(this).data("id");  
-                    $('.view-rincian-kegiatan').html(id);   
-                });
+ 
 
 
                 $("#tableAll").on("click", ".e-kgt", function () { 
@@ -285,7 +243,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Edit'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/kegiatan/edit/" + id); 
+                                        window.location.replace("/iuran/edit/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }
@@ -306,7 +264,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Hapus'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/kegiatan/hapus/" + id); 
+                                        window.location.replace("/iuran/hapus/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }

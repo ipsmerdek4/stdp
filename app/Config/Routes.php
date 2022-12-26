@@ -41,10 +41,13 @@ $routes->get('/', 'Home::index');
 
 
 $routes->get('/iuran', 'Iuran::index');
-$routes->post('/iuran', 'Iuran::index');
-$routes->get('/iuran/create', 'Iuran::create'); 
+$routes->post('/iuran', 'Iuran::index'); 
+$routes->get('/iuran/create/(:any)', 'Iuran::create/$1'); 
 $routes->post('/iuran/tambah', 'Iuran::progress'); 
- 
+$routes->get('/iuran/edit/(:any)', 'Iuran::edit/$1');
+$routes->post('/iuran/ubah/(:any)', 'Iuran::progres_update/$1');
+$routes->get('/iuran/hapus/(:any)', 'Iuran::delete/$1');
+
 
 $routes->get('/anggota', 'Anggota::index');
 $routes->get('/anggota/boxview-anggota', 'Anggota::views_anggota');
