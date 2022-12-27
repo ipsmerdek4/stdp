@@ -2,6 +2,7 @@
 namespace App\Controllers;
  
 use App\Models\KegiatanModel;
+use App\Models\AnggotaModel;
  
 use \Hermawan\DataTables\DataTable;
 
@@ -19,7 +20,14 @@ class Kegiatan extends BaseController{
 
     public function index()
     { 
-        return view('kegiatan/index');
+        $Anggota = new AnggotaModel(); 
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $data = [
+            'build' => $builder,
+        ];
+
+        return view('kegiatan/index', $data);
     }
 
 
@@ -77,12 +85,18 @@ class Kegiatan extends BaseController{
     public function create()
     { 
         
+        $Anggota = new AnggotaModel(); 
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $build = $builder;
+
+
         session();
         $data = [   
             'validation' 		=> \Config\Services::validation(), 
         ];
 
-        return view('kegiatan/create', compact('data')); 
+        return view('kegiatan/create', compact('data', 'build')); 
 
     }
  
@@ -170,13 +184,18 @@ class Kegiatan extends BaseController{
                         ->first();                 
 
 
+        $Anggota = new AnggotaModel(); 
+        $builderX = $Anggota->where('id', user_id())->first();
+
+        $build = $builderX;
+
         session();
         $data = [   
             'data'              => $builder,
             'validation' 		=> \Config\Services::validation(), 
         ];
 
-        return view('kegiatan/edit', compact('data')); 
+        return view('kegiatan/edit', compact('data','build')); 
     }
  
     public function progres_update($var)

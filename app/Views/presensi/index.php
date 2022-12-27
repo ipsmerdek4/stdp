@@ -14,10 +14,12 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
             <h1 class="h3 mb-0 text-gray-800">Presensi</h1> 
+            <?php if (in_groups('sekretaris')) : ?> 
             <a href="<?= base_url('presensi/create') ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
                 <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
                 Tambah Presensi
             </a>
+            <?php endif; ?>
         </div>
   
         <div class="row">
@@ -43,7 +45,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                         <th class="text-sm-center">Kegiatan</th> 
                                         <th class="text-sm-center">Waktu Presensi</th>  
                                         <th class="text-sm-center">Dokument</th>  
-                                        <th class="text-sm-center">Opsi</th> 
+                                        <?=(in_groups('sekretaris'))? '<th class="text-sm-center">Opsi</th> ' : '' ?> 
                                     </tr>
                                 </thead>
                                 <tbody> 
@@ -153,7 +155,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     {data: '2', className: "text-center"},  
                                     {data: '3', className: "text-center"},   
                                     {data: '4', className: "text-center"},   
-                                    {data: '5', orderable: false, className: "text-center"},   
+                                    <?=(in_groups('sekretaris'))? '{data: "5", orderable: false, className: "text-center"},' : '' ?> 
                                 ],    
                         }); 
 

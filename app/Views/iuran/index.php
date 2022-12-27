@@ -15,10 +15,12 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
             <h1 class="h3 mb-0 text-gray-800">Iuran</h1>
 
-            <a href="<?= base_url('iuran/create/'.date("Y-m")) ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
-                <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
-                Tambah Iuran
-            </a>
+            <?php if (in_groups('bendahara')) : ?> 
+                <a href="<?= base_url('iuran/create/'.date("Y-m")) ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
+                    <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
+                    Tambah Iuran
+                </a>
+            <?php endif; ?>
         </div>
 
     
@@ -38,6 +40,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                     <!-- Card Body -->
                     <div class="card-body">
 
+
                         <form action="<?=base_url('iuran')?>" method="post">
                         <div class="row">
                             <div class="col-2">
@@ -50,22 +53,32 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                         </select>  
                                     </div>  
                             </div>
-                            <div class="col-3">
-                                    <div class="form-group">
-                                        <select name="anggota" class="form-control <?= ($data['validation']->hasError('kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>">
-                                            <option value="">-- Pilih Anggota</option>
-                                            <?php foreach ($data['anggota'] as $v):?>
-                                                <option value="<?= $v->id ?>" <?= ($v->id == $data['user_id'])? 'selected' : '' ?> ><?= $v->nama_lengkap ?></option> 
-                                            <?php endforeach;  ?>
-                                        </select>  
-                                    </div>  
-                            </div>
+                            <?php if(in_groups('bendahara')): ?>   
+                                <div class="col-3">
+                                        <div class="form-group">
+                                            <select name="anggota" class="form-control <?= ($data['validation']->hasError('kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>">
+                                                <option value="">-- Pilih Anggota</option>
+                                                <?php foreach ($data['anggota'] as $v):?>
+                                                    <option value="<?= $v->id ?>" <?= ($v->id == $data['user_id'])? 'selected' : '' ?> ><?= $v->nama_lengkap ?></option> 
+                                                <?php endforeach;  ?>
+                                            </select>  
+                                        </div>  
+                                </div> 
+
+
+                            <?php else: ?>    
+
+                                <input type="hidden" name="anggota" value="<?=$data['user_id']?>">
+                            <?php endif; ?>   
+                            
+                            
                             <div class="col-2">
                                     <button type="submit" class="btn btn-primary w-100">Tampilkan</button>
                             </div>
                         </div>
                         </form>
-
+                  
+                    
                         <div class="table-responsive">
                             <table id="tableAll" class="table table-bordered text-center" style="width:100%">
                                 <thead>
@@ -75,7 +88,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                         <th class="text-sm-center">Total<br>Pembayaran</th> 
                                         <th class="text-sm-center">Status</th>  
                                         <th class="text-sm-center">Tanggal<br>Pembayaran</th> 
-                                        <th class="text-sm-center">Opsi</th> 
+                                        <?=(in_groups('bendahara'))? '<th class="text-sm-center">Opsi</th>' : '' ?>  
                                     </tr>
                                 </thead>
                                 <tbody> 
@@ -96,6 +109,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                                     ?>
                                                 </td>
                                                 <td><?= $vviuran['tgl_bayar'] ?></td>
+                                        <?php if(in_groups('bendahara')): ?>    
                                                 <td> 
                                                     <?php
                                                     if ($vviuran['status'] == 0) { ?> 
@@ -115,6 +129,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                                         </div> 
                                                     <?php }  ?>
                                                 </td>
+                                        <?php endif; ?>
                                             </tr> 
                                     <?php
                                         }   

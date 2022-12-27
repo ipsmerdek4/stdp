@@ -50,19 +50,27 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                             <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('nama_anggota')) ?>
                                         </small>  
                                     </div> 
-                                    <div class="form-group">
-                                        <label class="<?= ($data['validation']->hasError('Jabatan')) ? 'text-danger' : 'text-primary' ?>">Jabatan</label>
-                                        <select name="Jabatan" class="form-control <?= ($data['validation']->hasError('Jabatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>">
-                                            <option value="">-- Select</option> 
-                                            <option value="1" <?=($data['data']->jabatan == 1)? 'selected' : ''?> >Sekretaris</option>
-                                            <option value="2" <?=($data['data']->jabatan == 2)? 'selected' : ''?> >Bendahara</option>
-                                            <option value="3" <?=($data['data']->jabatan == 3)? 'selected' : ''?> >Ketua dan Wakil</option>
-                                            <option value="4" <?=($data['data']->jabatan == 4)? 'selected' : ''?> >Anggota</option>
-                                        </select>
-                                        <small class="text-danger  ">  
-                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('Jabatan')) ?>
-                                        </small>  
-                                    </div> 
+
+                                    
+                                    <?php if (in_groups('sekretaris')) : ?>
+                                        <input type="hidden" name="Jabatan" value="4" readonly>
+                                    <?php elseif (in_groups('ketuadanwakil')) : ?> 
+                                        <div class="form-group">
+                                            <label class="<?= ($data['validation']->hasError('Jabatan')) ? 'text-danger' : 'text-primary' ?>">Jabatan</label>
+                                            <select name="Jabatan" class="form-control <?= ($data['validation']->hasError('Jabatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>">
+                                                <option value="">-- Select Jabatan</option> 
+                                                <option value="1" <?=($data['data']->jabatan == 1)? 'selected' : ''?> >Sekretaris</option>
+                                                <option value="2" <?=($data['data']->jabatan == 2)? 'selected' : ''?> >Bendahara</option>
+                                                <option value="3" <?=($data['data']->jabatan == 3)? 'selected' : ''?> >Ketua dan Wakil</option>
+                                                <option value="4" <?=($data['data']->jabatan == 4)? 'selected' : ''?> >Anggota</option>
+                                            </select>
+                                            <small class="text-danger  ">  
+                                                <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('Jabatan')) ?>
+                                            </small>  
+                                        </div> 
+                                    <?php endif; ?>
+
+                                    
                                     <div class="form-group">
                                         <label class="<?= ($data['validation']->hasError('telp')) ? 'text-danger' : 'text-primary' ?>">No Telp</label>
                                         <input name="telp" value="<?=$data['data']->no_telp?>" type="text" class="form-control <?= ($data['validation']->hasError('telp')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="+62 "> 

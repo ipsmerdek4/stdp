@@ -13,18 +13,12 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            <h1 class="h3 mb-0 text-gray-800">Kegiatan</h1>
+            <h1 class="h3 mb-0 text-gray-800">Laporan</h1>
 
-            <?php
-                $vt = ' 
-                    <a href="'.base_url('kegiatan/create').'" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
-                        <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
-                        Tambah Kegiatan
-                    </a>
-                ';
-            ?>
-            <?=(in_groups('sekretaris'))? $vt : '' ?>  
-
+            <a href="<?= base_url('laporan/create') ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
+                <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
+                Tambah Laporan
+            </a>
         </div>
 
     
@@ -38,7 +32,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">View Kegiatan</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">View Laporan</h6>
                         
                     </div>
                     <!-- Card Body -->
@@ -50,12 +44,12 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 <thead>
                                     <tr>
                                         <th class="text-sm-center">No</th>  
-                                        <th class="text-sm-center">Nama Kegiatan</th> 
-                                        <th class="text-sm-center">Tanggal Mulai</th> 
-                                        <th class="text-sm-center">Tanggal Berakhir</th> 
-                                        <th class="text-sm-center">Rincian Kegiatan</th>   
-                                        <th class="text-sm-center">Penerbit</th> 
-                                        <?=(in_groups('sekretaris'))? '<th class="text-sm-center">Opsi</th>' : '' ?>  
+                                        <th class="text-sm-center">Tanggal</th> 
+                                        <th class="text-sm-center">Nama Laporan</th> 
+                                        <th class="text-sm-center">Keterangan Laporan</th> 
+                                        <th class="text-sm-center">File Laporan</th>   
+                                        <th class="text-sm-center">Penerbit</th>   
+                                        <th class="text-sm-center">Opsi</th> 
                                     </tr>
                                 </thead>
                                 <tbody> 
@@ -150,6 +144,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
 
 
+
                 $(document).ready(function() {
                         // table Persediaan
                         $('#tableAll').DataTable({  
@@ -161,16 +156,15 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 processing: true,
                                 serverSide: true,
                                 order: [[ 2, 'asc' ],],  
-                                ajax: "/kegiatan/boxview-kegiatan", 
+                                ajax: "/laporan/boxview-laporan", 
                                 columns: [
                                     {data: '0', orderable: false, className: "text-center"}, 
                                     {data: '1', className: "text-center"}, 
                                     {data: '2', className: "text-center"},  
                                     {data: '3', className: "text-center"},  
                                     {data: '4', className: "text-center"},    
-                                    {data: '5', className: "text-center"}, 
-                                    <?=(in_groups('sekretaris'))? '{data: "6", orderable: false, className: "text-center"},' : '' ?>    
-    
+                                    {data: '5', className: "text-center"},    
+                                    {data: '6', orderable: false, className: "text-center"},   
                                 ],    
                         });
 
@@ -198,7 +192,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Edit'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/kegiatan/edit/" + id); 
+                                        window.location.replace("/laporan/edit/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }
@@ -219,7 +213,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Hapus'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/kegiatan/hapus/" + id); 
+                                        window.location.replace("/laporan/hapus/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }

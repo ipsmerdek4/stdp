@@ -20,8 +20,14 @@ class Presensi extends BaseController{
 
     public function index()
     {
-         
-        return view('presensi/index' ); 
+        $Anggota = new AnggotaModel(); 
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $data = [
+            'build' => $builder,
+        ];
+
+        return view('presensi/index', $data); 
         
     }
 
@@ -86,7 +92,7 @@ class Presensi extends BaseController{
 
     }
 
-  
+
     public function views_()
     {
         $Presensi = new PresensiModel(); 

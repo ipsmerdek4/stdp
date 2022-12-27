@@ -20,7 +20,14 @@ class Anggota extends BaseController{
     public function index()
     {
  
-        return view('anggota/index');
+        $Anggota = new AnggotaModel(); 
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $data = [
+            'build' => $builder,
+        ];
+
+        return view('anggota/index', $data);
     }
 
  
@@ -50,6 +57,18 @@ class Anggota extends BaseController{
                     }
                     return $v;
                 })  
+                ->edit('jabatan', function($row){
+                    if ($row->jabatan == 1) {
+                        $v = '<h6 class="font-weight-bold">Sekretaris</h6>';
+                    } elseif($row->jabatan == 2) {
+                        $v = '<h6 class="font-weight-bold">Bendahara</h6>'; 
+                    } elseif($row->jabatan == 3) {
+                        $v = '<h6 class="font-weight-bold">Ketua Atau Wakil</h6>'; 
+                    } elseif($row->jabatan == 4) {
+                        $v = '<h6 class="font-weight-bold">Anggota</h6>'; 
+                    }
+                    return $v;
+                })  
                 ->add('action', function($row){
                     return    ' 
                             <div class="btn-group" role="group" aria-label="Basic example">
@@ -72,12 +91,19 @@ class Anggota extends BaseController{
     public function create()
     { 
         
+
+        $Anggota = new AnggotaModel(); 
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $build = $builder ;
+
+
         session();
         $data = [   
             'validation' 		=> \Config\Services::validation(), 
         ];
 
-        return view('anggota/create', compact('data')); 
+        return view('anggota/create', compact('data','build')); 
 
     }
 
@@ -180,7 +206,7 @@ class Anggota extends BaseController{
                 ->orderBy('id', 'DESC')
                 ->first();
 
-        $id = $check->id + 1;      
+        $id = $check->id + 1;  
         $date_anggota = $this->request->getVar('date_anggota'); 
         $nama_anggota = $this->request->getVar('nama_anggota'); 
         $Jabatan = $this->request->getVar('Jabatan'); 
@@ -206,6 +232,9 @@ class Anggota extends BaseController{
                 'tanggal_masuk' => $date_anggota,
                 'created_at_agt'    => date("Y-m-d H:i:s")
             ];
+
+            $Anggota->insert($data1); 
+
             $data2 = [
                 'id'    => $id,
                 'anggota_id' =>  $id,
@@ -215,12 +244,12 @@ class Anggota extends BaseController{
                 'active' => $Status, 
                 'created_at' => date("Y-m-d H:i:s")
             ];
+
             $data3 = [
                 'group_id'      => $Jabatan,
                 'user_id'       => $id, 
             ];
 
-            $Anggota->insert($data1); 
             $this->builder2->insert($data2); 
             $this->builder3->insert($data3); 
 
@@ -269,7 +298,13 @@ class Anggota extends BaseController{
             'validation' 		=> \Config\Services::validation(), 
         ];
 
-        return view('anggota/edit', compact('data')); 
+        $Anggota = new AnggotaModel(); 
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $build = $builder ;
+
+
+        return view('anggota/edit', compact('data','build')); 
     }
 
 

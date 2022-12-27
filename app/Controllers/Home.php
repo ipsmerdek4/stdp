@@ -2,10 +2,20 @@
 
 namespace App\Controllers;
 
+use App\Models\AnggotaModel; 
+
 class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+
+        $Anggota = new AnggotaModel(); 
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $data = [
+            'build' => $builder,
+        ];
+
+        return view('home', $data);
     }
 }

@@ -40,44 +40,54 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 
-$routes->get('/iuran', 'Iuran::index');
-$routes->post('/iuran', 'Iuran::index'); 
-$routes->get('/iuran/create/(:any)', 'Iuran::create/$1'); 
-$routes->post('/iuran/tambah', 'Iuran::progress'); 
-$routes->get('/iuran/edit/(:any)', 'Iuran::edit/$1');
-$routes->post('/iuran/ubah/(:any)', 'Iuran::progres_update/$1');
-$routes->get('/iuran/hapus/(:any)', 'Iuran::delete/$1');
+$routes->get('/iuran', 'Iuran::index', ['filter' => 'role:bendahara, user, ']);
+$routes->post('/iuran', 'Iuran::index', ['filter' => 'role:bendahara, user, ']); 
+$routes->get('/iuran/create/(:any)', 'Iuran::create/$1', ['filter' => 'role:bendahara']);
+$routes->post('/iuran/tambah', 'Iuran::progress', ['filter' => 'role:bendahara']);
+$routes->get('/iuran/edit/(:any)', 'Iuran::edit/$1', ['filter' => 'role:bendahara']);
+$routes->post('/iuran/ubah/(:any)', 'Iuran::progres_update/$1', ['filter' => 'role:bendahara']);
+$routes->get('/iuran/hapus/(:any)', 'Iuran::delete/$1', ['filter' => 'role:bendahara']);
 
 
-$routes->get('/anggota', 'Anggota::index');
-$routes->get('/anggota/boxview-anggota', 'Anggota::views_anggota');
-$routes->post('/anggota/list-view-anggota', 'Anggota::list_view_anggota');
-$routes->get('/anggota/create', 'Anggota::create');
-$routes->post('/anggota/tambah', 'Anggota::pogress');
-$routes->get('/anggota/edit/(:any)', 'Anggota::edit/$1');
-$routes->post('/anggota/ubah/(:any)', 'Anggota::progres_update/$1');
-$routes->get('/anggota/hapus/(:any)', 'Anggota::delete/$1');
+$routes->get('/laporan', 'Laporan::index', ['filter' => 'role:sekretaris,']);
+$routes->get('/laporan/boxview-laporan', 'Laporan::views_', ['filter' => 'role:sekretaris,']);
+$routes->get('/laporan/create', 'Laporan::create', ['filter' => 'role:sekretaris,']); 
+$routes->post('/laporan/tambah', 'Laporan::progress', ['filter' => 'role:sekretaris,']); 
+$routes->get('/laporan/edit/(:any)', 'laporan::edit/$1', ['filter' => 'role:sekretaris,']);
+$routes->post('/laporan/ubah/(:any)', 'laporan::progres_update/$1', ['filter' => 'role:sekretaris,']);
+$routes->get('/laporan/hapus/(:any)', 'laporan  ::delete/$1', ['filter' => 'role:sekretaris,']);
+
+
+
+
+$routes->get('/anggota', 'Anggota::index', ['filter' => 'role:sekretaris, ketuadanwakil']);
+$routes->get('/anggota/boxview-anggota', 'Anggota::views_anggota', ['filter' => 'role:sekretaris, ketuadanwakil']);
+$routes->post('/anggota/list-view-anggota', 'Anggota::list_view_anggota', ['filter' => 'role:sekretaris, ketuadanwakil']);
+$routes->get('/anggota/create', 'Anggota::create', ['filter' => 'role:sekretaris, ketuadanwakil']);
+$routes->post('/anggota/tambah', 'Anggota::pogress', ['filter' => 'role:sekretaris, ketuadanwakil']);
+$routes->get('/anggota/edit/(:any)', 'Anggota::edit/$1', ['filter' => 'role:sekretaris, ketuadanwakil']);
+$routes->post('/anggota/ubah/(:any)', 'Anggota::progres_update/$1', ['filter' => 'role:sekretaris, ketuadanwakil']);
+$routes->get('/anggota/hapus/(:any)', 'Anggota::delete/$1', ['filter' => 'role:sekretaris, ketuadanwakil']);
 
  
-
-$routes->get('/presensi', 'Presensi::index');
-$routes->get('/presensi/create', 'Presensi::create');
-$routes->post('/presensi/tambah', 'Presensi::pogress');
-$routes->get('/presensi/view', 'Presensi::view');
-$routes->get('/presensi/view/boxview-presensi', 'Presensi::views_');
-$routes->get('/presensi/edit/(:any)', 'Presensi::edit/$1');
-$routes->post('/presensi/ubah/(:any)', 'Presensi::progres_update/$1');
-$routes->get('/presensi/hapus/(:any)', 'presensi::delete/$1');
-
+$routes->get('/presensi', 'Presensi::index', ['filter' => 'role:sekretaris, user']);
+$routes->get('/presensi/create', 'Presensi::create', ['filter' => 'role:sekretaris, ']);
+$routes->post('/presensi/tambah', 'Presensi::pogress', ['filter' => 'role:sekretaris, ']);
+$routes->get('/presensi/view', 'Presensi::view', ['filter' => 'role:sekretaris, ']);
+$routes->get('/presensi/view/boxview-presensi', 'Presensi::views_', ['filter' => 'role:sekretaris, user']);
+$routes->get('/presensi/edit/(:any)', 'Presensi::edit/$1', ['filter' => 'role:sekretaris, ']);
+$routes->post('/presensi/ubah/(:any)', 'Presensi::progres_update/$1', ['filter' => 'role:sekretaris, ']);
+$routes->get('/presensi/hapus/(:any)', 'presensi::delete/$1', ['filter' => 'role:sekretaris, ']);
 
 
-$routes->get('/kegiatan', 'Kegiatan::index');
-$routes->get('/kegiatan/boxview-kegiatan', 'Kegiatan::views_kegiatan');
-$routes->get('/kegiatan/create', 'Kegiatan::create');
-$routes->post('/kegiatan/tambah', 'Kegiatan::pogress');
-$routes->get('/kegiatan/edit/(:any)', 'Kegiatan::edit/$1');
-$routes->post('/kegiatan/ubah/(:any)', 'Kegiatan::progres_update/$1');
-$routes->get('/kegiatan/hapus/(:any)', 'Kegiatan::delete/$1');
+
+$routes->get('/kegiatan', 'Kegiatan::index', ['filter' => 'role:sekretaris, user']);
+$routes->get('/kegiatan/boxview-kegiatan', 'Kegiatan::views_kegiatan', ['filter' => 'role:sekretaris, user']);
+$routes->get('/kegiatan/create', 'Kegiatan::create', ['filter' => 'role:sekretaris']);
+$routes->post('/kegiatan/tambah', 'Kegiatan::pogress', ['filter' => 'role:sekretaris']);
+$routes->get('/kegiatan/edit/(:any)', 'Kegiatan::edit/$1', ['filter' => 'role:sekretaris']);
+$routes->post('/kegiatan/ubah/(:any)', 'Kegiatan::progres_update/$1', ['filter' => 'role:sekretaris']);
+$routes->get('/kegiatan/hapus/(:any)', 'Kegiatan::delete/$1', ['filter' => 'role:sekretaris']);
 
 
 

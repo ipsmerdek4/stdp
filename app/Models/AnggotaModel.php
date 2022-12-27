@@ -9,6 +9,7 @@ class AnggotaModel extends Model{
     protected $primaryKey       = 'id';
     protected $returnType       = "object"; 
     protected $allowedFields    = [
+        'id',
         'nama_lengkap',
         'jabatan',
         'no_telp',

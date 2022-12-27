@@ -6,7 +6,7 @@ class anggota extends \CodeIgniter\Database\Seeder{
         $data = [
             [ 
                 "id"                => "1",   
-                "nama_lengkap"      => "sekretaris",
+                "nama_lengkap"      => "Nama Sekretaris",
                 "jabatan"           => "1",
                 "no_telp"           => "+62 ",
                 "alamat"            => "",
@@ -16,7 +16,7 @@ class anggota extends \CodeIgniter\Database\Seeder{
             ],  
             [ 
                 "id"                => "2",   
-                "nama_lengkap"      => "bendahara",
+                "nama_lengkap"      => "Nama Bendahara",
                 "jabatan"           => "2",
                 "no_telp"           => "+62 ",
                 "alamat"            => "",
@@ -26,7 +26,7 @@ class anggota extends \CodeIgniter\Database\Seeder{
             ],  
             [ 
                 "id"                => "3",   
-                "nama_lengkap"      => "ketua dan wakil",
+                "nama_lengkap"      => "nama Ketua atau Wakil",
                 "jabatan"           => "3",
                 "no_telp"           => "+62 ",
                 "alamat"            => "",
@@ -36,7 +36,7 @@ class anggota extends \CodeIgniter\Database\Seeder{
             ],  
             [ 
                 "id"                => "4",   
-                "nama_lengkap"      => "user",
+                "nama_lengkap"      => "Nama user",
                 "jabatan"           => "4",
                 "no_telp"           => "+62 ",
                 "alamat"            => "",

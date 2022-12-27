@@ -30,41 +30,46 @@ $uri = service('uri')->getSegments();
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider mb-0">
 
                         <!-- Heading -->
-                        <div class="sidebar-heading">
+                        <!-- <div class="sidebar-heading">
                             Keuangan
-                        </div>
+                        </div> -->
 
-                    
+                    <?php if (in_groups('user')|| in_groups('bendahara') ) : ?>
+
                         <!-- Nav Item - Dashboard -->
-                        <li class="nav-item  <?= ($uri0 == 'iuran') ? 'active' : '' ?>">
+                        <li class="nav-item  <?= ($uri0 == 'iuran') ? 'active' : '' ?>  ">
                             <a class="nav-link" href="<?= base_url('iuran') ?>">
                                 <i class="fa-thin fa-money-bills-simple"></i>                    
                                 <span> Iuran</span>
                             </a>
                         </li>
- 
+                    <?php endif; ?>
+
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <!-- <hr class="sidebar-divider"> -->
 
                         <!-- Heading -->
-                        <div class="sidebar-heading">
+                        <!-- <div class="sidebar-heading">
                             Interface
-                        </div>
+                        </div> -->
                         
-                        
+                    <?php if (in_groups('sekretaris') || in_groups('ketuadanwakil') ) : ?>
                         <!-- Nav Item - Dashboard -->
                         <li class="nav-item <?= ($uri0 == 'anggota') ? 'active' : '' ?>">
                             <a class="nav-link" href="<?= base_url('anggota') ?>">
                                 <i class="fa-regular fa-users" style="font-size: 13px;"></i>                    
                                 <span> Anggota</span>
                             </a>
-                        </li>
-            
-                        
+                        </li> 
+                    <?php endif; ?>
+
+
+                    <?php if (in_groups('sekretaris') || in_groups('user') ) : ?>
+
                         <!-- Nav Item - Dashboard -->
                         <li class="nav-item <?= ($uri0 == 'presensi') ? 'active' : '' ?>">
                             <a class="nav-link" href="<?= base_url('presensi') ?>">
@@ -72,8 +77,9 @@ $uri = service('uri')->getSegments();
                                 <span> Presensi</span>
                             </a>
                         </li>
-            
-                        
+                    <?php endif; ?>
+             
+                    <?php if (in_groups('sekretaris') || in_groups('user') ) : ?> 
                         <!-- Nav Item - Dashboard -->
                         <li class="nav-item <?= ($uri0 == 'kegiatan') ? 'active' : '' ?>">
                             <a class="nav-link  " href="<?= base_url('kegiatan') ?>">
@@ -81,26 +87,42 @@ $uri = service('uri')->getSegments();
                                 <span> Kegiatan</span>
                             </a>
                         </li>
+                    <?php endif; ?>
+             
+                    <?php if (in_groups('sekretaris')) : ?>  
+                        <li class="nav-item <?= ($uri0 == 'laporan') ? 'active' : '' ?>">
+                            <a class="nav-link  " href="<?= base_url('laporan') ?>">
+                            <i class="fa-solid fa-file" style="font-size: 18px;"></i>           
+                                <span> Laporan</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
 
 
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+          <!--   <hr class="sidebar-divider"> -->
 
                         <!-- Heading -->
-                        <div class="sidebar-heading">
+                       <!--  <div class="sidebar-heading">
                             Laporan
-                        </div>
+                        </div> -->
 
                     
                         <!-- Nav Item - Dashboard -->
-                        <li class="nav-item ">
-                            <a class="nav-link  " href="<?= base_url() ?>">
+                       <!--  <li class="nav-item ">
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo">
                                 <i class="fa-solid fa-print"></i>                    
                                 <span> Report</span>
                             </a>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="<?=base_url('iuran/report-iuran')?>">Iuran</a>
+                                    <a class="collapse-item" href="">Cards</a>
+                                </div>
+                            </div>
                         </li>
-
+ -->
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
  

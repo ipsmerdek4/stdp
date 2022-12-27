@@ -6,6 +6,9 @@ use App\Models\AnggotaModel;
 use \Hermawan\DataTables\DataTable;
 use PHPSQLParser\builders\Builder;
 
+ 
+
+
 class Iuran extends BaseController{
 
     public function __construct()
@@ -95,7 +98,11 @@ class Iuran extends BaseController{
                     ->where('anggota_id', $anggota)
                     ->countAllResults();
 
-  
+
+        $Anggota = new AnggotaModel(); 
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $build = $builder;
         
         session();
         $data = [   
@@ -107,16 +114,20 @@ class Iuran extends BaseController{
             'validation' 		=> \Config\Services::validation(), 
         ];
 
-        return view('iuran/index', compact('data'));  
+        return view('iuran/index', compact('data', 'build'));  
     }
 
     
     public function create($var)
     { 
         
-        $nvar = (isset($var))? $var : date("Y-m");
-
+        $nvar = (isset($var))? $var : date("Y-m"); 
         $Anggota =  new AnggotaModel();
+
+        $Anggota = new AnggotaModel(); 
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $build = $builder;
 
 
         session();
@@ -126,7 +137,7 @@ class Iuran extends BaseController{
             'validation' 		=> \Config\Services::validation(), 
         ];
 
-        return view('iuran/create', compact('data')); 
+        return view('iuran/create', compact('data','build')); 
 
     }
 
@@ -195,7 +206,12 @@ class Iuran extends BaseController{
         $nvar = (isset($var))? $var : '';
 
         $Anggota =  new AnggotaModel();
-        $Iuran =  new IuranModel();
+        $Iuran =  new IuranModel(); 
+        
+        
+        $builder = $Anggota->where('id', user_id())->first();
+
+        $build = $builder;
 
 
         session();
@@ -205,7 +221,7 @@ class Iuran extends BaseController{
             'validation' 		=> \Config\Services::validation(), 
         ];
 
-        return view('iuran/edit', compact('data')); 
+        return view('iuran/edit', compact('data','build')); 
 
     }
 
@@ -259,5 +275,8 @@ class Iuran extends BaseController{
 
 
     }
+
+
+ 
 
 }
