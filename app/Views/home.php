@@ -59,14 +59,40 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Pengumuman</h6>
+                        <h4 class="m-0 font-weight-bold text-primary">Pengumuman</h4>
                         
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="chart-area">
+                            <div>
+                                <h5 class="pb-0 mb-0"><a href="" class="mb-0 pb-0">Judul Kegiatan</a></h5>
+                                <small style="font-size: 10px; ">13/10/2022 ~ 21/12/2022</small>
+                                <p style="color: black;">asdasda dalhdshadljhaskjdhaklshdklashdkljashdlkhsajlhdslkj hd s' jcl'sjkl'jsalkjl jl jd ja lsdjalksda
+                                    ajd sajd'asjd'asjkd'lajslkjsa' djas'ljdal'sd'asd  jasjdas lkahskdhaslhdajkhd;kshdj;shadk;sahsandksa;k 
+                                     asd asd sa dasd a asdkasdkja dnlsadk;ahsdk;ashdk;asinha s
+                                     akjsdh kashd
+                                         asd ksahd;ksa 
+                                         <br>
+                                         <a href="">Selanjutnya ...</a>
+                                    </datagrid>
+                                </p>
+                            </div>
                             
-                            asd
+                            <div>
+                                <h5 class="pb-0 mb-0"><a href="" class="mb-0 pb-0">Judul Kegiatan</a></h5>
+                                <small class=" " style="font-size: 10px; ">13/10/2022 ~ 21/12/2022</small>
+                                <p style="color: black;">asdasda dalhdshadljhaskjdhaklshdklashdkljashdlkhsajlhdslkj hd s' jcl'sjkl'jsalkjl jl jd ja lsdjalksda
+                                    ajd sajd'asjd'asjkd'lajslkjsa' djas'ljdal'sd'asd  jasjdas lkahskdhaslhdajkhd;kshdj;shadk;sahsandksa;k 
+                                     asd asd sa dasd a asdkasdkja dnlsadk;ahsdk;ashdk;asinha s
+                                     akjsdh kashd
+                                         asd ksahd;ksa 
+                                         <br>
+                                         <a href="">Selanjutnya ...</a>
+                                    </datagrid>
+                                </p>
+                            </div>
+
 
 
                         </div>
