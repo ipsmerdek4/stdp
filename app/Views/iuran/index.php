@@ -104,8 +104,10 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                                     if ($vviuran['status'] == 0) {
                                                         echo '<span class="badge badge-danger">Belum<br>Membayar</span>';
                                                     }elseif ($vviuran['status'] == 1) {
-                                                        echo '<span class="badge badge-success p-2">Sudah<br>Membayar</span>';
-                                                    } 
+                                                        echo '<span class="badge badge-success p-2">Uang Masuk</span>';
+                                                    }/* elseif ($vviuran['status'] == 2) {
+                                                        echo '<span class="badge badge-success p-2">Uang Keluar</span>';
+                                                    }  */
                                                     ?>
                                                 </td>
                                                 <td><?= $vviuran['tgl_bayar'] ?></td>
@@ -118,7 +120,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                                                 <i class="fa-solid fa-pen-to-square fa-sm"></i>
                                                             </a>  
                                                         </div> 
-                                                    <?php }elseif ($vviuran['status'] == 1) { ?> 
+                                                    <?php }elseif (($vviuran['status'] == 1)or($vviuran['status'] == 2)) { ?> 
                                                         <div class="btn-group" role="group" aria-label="Basic example"> 
                                                             <a href="javascript:void(0)" data-id="<?= $vviuran['id'] ?>" class="btn btn-success btn-sm pt-1 e-kgt" style="width:33px;">
                                                                 <i class="fa-solid fa-pen-to-square fa-sm"></i>

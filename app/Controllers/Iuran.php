@@ -82,7 +82,7 @@ class Iuran extends BaseController{
                 'datem'                 => $i,
                 'bulan'                 => $bulanX[$i],
                 'nominal_iuran'         => (isset($bulansss->nominal_iuran))? $bulansss->nominal_iuran : 0,
-                'status'                => (isset($bulansss->sts_iuran))? $bulansss->sts_iuran : '',
+                'status'                => (isset($bulansss->sts_iuran))? $bulansss->sts_iuran : 0,
                 'tgl_bayar'             => $ndate,
                 'id'                    => (isset($bulansss->id))? $bulansss->id : '',
             ]; 

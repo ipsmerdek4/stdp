@@ -38,6 +38,7 @@ $routes->set404Override();
 
 
 $routes->get('/', 'Home::index');
+$routes->post('/views-home', 'Home::view_home'); 
 
 
 $routes->get('/iuran', 'Iuran::index', ['filter' => 'role:bendahara, user, ']);
