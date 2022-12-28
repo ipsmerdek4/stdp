@@ -40,6 +40,9 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->post('/views-home', 'Home::view_home'); 
 
+$routes->get('/profil', 'Profil::index');
+
+
 
 $routes->get('/iuran', 'Iuran::index', ['filter' => 'role:bendahara, user, ']);
 $routes->post('/iuran', 'Iuran::index', ['filter' => 'role:bendahara, user, ']); 
@@ -66,8 +69,8 @@ $routes->get('/anggota/boxview-anggota', 'Anggota::views_anggota', ['filter' => 
 $routes->post('/anggota/list-view-anggota', 'Anggota::list_view_anggota', ['filter' => 'role:sekretaris, ketuadanwakil']);
 $routes->get('/anggota/create', 'Anggota::create', ['filter' => 'role:sekretaris, ketuadanwakil']);
 $routes->post('/anggota/tambah', 'Anggota::pogress', ['filter' => 'role:sekretaris, ketuadanwakil']);
-$routes->get('/anggota/edit/(:any)', 'Anggota::edit/$1', ['filter' => 'role:sekretaris, ketuadanwakil']);
-$routes->post('/anggota/ubah/(:any)', 'Anggota::progres_update/$1', ['filter' => 'role:sekretaris, ketuadanwakil']);
+$routes->get('/anggota/edit/(:any)', 'Anggota::edit/$1');
+$routes->post('/anggota/ubah/(:any)', 'Anggota::progres_update/$1');
 $routes->get('/anggota/hapus/(:any)', 'Anggota::delete/$1', ['filter' => 'role:sekretaris, ketuadanwakil']);
 
  

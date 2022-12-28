@@ -31,9 +31,10 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                         
                     </div>
                     <!-- Card Body -->
-                    <div class="card-body">
-
+                    <div class="card-body"> 
                         <form action="<?= base_url('/anggota/ubah')?>/<?=$data['data']->user_id?>" method="post" enctype="multipart/form-data">
+                        <input name="url" type="hidden" value="<?= ($data['var2'] == "profil")?  ($data['var2']) : "" ?>">
+
                             <div class="row">
                                 <div class=" offset-xl-2 col-12 col-sm col-xl-4"> 
                                     <div class="form-group">
@@ -52,9 +53,8 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     </div> 
 
                                     
-                                    <?php if (in_groups('sekretaris')) : ?>
-                                        <input type="hidden" name="Jabatan" value="4" readonly>
-                                    <?php elseif (in_groups('ketuadanwakil')) : ?> 
+                                  
+                                    <?php if (in_groups('ketuadanwakil')) : ?> 
                                         <div class="form-group">
                                             <label class="<?= ($data['validation']->hasError('Jabatan')) ? 'text-danger' : 'text-primary' ?>">Jabatan</label>
                                             <select name="Jabatan" class="form-control <?= ($data['validation']->hasError('Jabatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>">
@@ -68,6 +68,8 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                                 <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('Jabatan')) ?>
                                             </small>  
                                         </div> 
+                                    <?php else : ?>
+                                        <input type="hidden" name="Jabatan" value="<?=$data['data']->jabatan?>" readonly>
                                     <?php endif; ?>
 
                                     
@@ -87,6 +89,9 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     </div> 
                                 </div> 
                                 <div class=" col-12 col-sm col-xl-4">
+
+                             
+                                <?php  if (in_groups('ketuadanwakil')) : ?>  
                                     <div class="form-group">
                                         <label class="<?= ($data['validation']->hasError('Status')) ? 'text-danger' : 'text-primary' ?>">Status</label>
                                         <select name="Status" class="form-control  <?= ($data['validation']->hasError('Status')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?> ">
@@ -97,6 +102,9 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                             <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('Status')) ?>
                                         </small> 
                                     </div> 
+                                <?php else: ?>
+                                    <input type="hidden" name="Status" value="<?=$data['data']->status?>" readonly>
+                                <?php endif; ?>
                                     <div class="form-group">
                                         <label class="<?= ($data['validation']->hasError('email')) ? 'text-danger' : 'text-primary' ?>">Email</label>
                                         <input name="email" value="<?=$data['data']->email?>" type="text" class="form-control <?= ($data['validation']->hasError('email')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="email@email.com"> 
@@ -136,7 +144,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 </div> 
                                 <div class=" offset-lg-2 col-lg-8 text-right  ">
                                     <hr class="border border-primary">
-                                    <a href="<?=base_url('anggota')?>" class="btn btn-danger btn-sm">Kembali</a> 
+                                    <a href="<?= ($data['var2'] == "profil")?  base_url('profil') : base_url('anggota') ?>" class="btn btn-danger btn-sm">Kembali</a> 
                                     <button type="submit" class="btn btn-primary btn-sm">Simpan</button> 
                                 </div>
                             </div> 

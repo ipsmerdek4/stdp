@@ -47,7 +47,7 @@ class Home extends BaseController
         $Kegiatan   = new KegiatanModel(); 
         $pengumanan  = $Kegiatan->where('id', $id)->first(); 
 
-        $limit = 10;
+       
         $v_pemumuman = $pengumanan->keterangan_kgt; 
  
         echo json_encode($v_pemumuman);
