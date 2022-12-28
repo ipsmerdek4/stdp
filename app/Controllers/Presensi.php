@@ -34,17 +34,19 @@ class Presensi extends BaseController{
     public function create()
     {
         
+      
         $Kegiatan = new KegiatanModel();
-        $Anggota = new AnggotaModel();
+        $Anggota = new AnggotaModel(); 
+	    $build = $Anggota->where('id', user_id())->first();
 
         session();
-        $data = [   
+        $data = [    
             'anggota'           => $Anggota->findAll(),
             'kegiatan'          => $Kegiatan->findAll(),
             'validation' 		=> \Config\Services::validation(), 
         ];
 
-        return view('presensi/create', compact('data')); 
+        return view('presensi/create', compact('data','build'));
     }
 
     public function pogress()
