@@ -1,5 +1,5 @@
 <?= $this->section('title') ?>
-POS Anisa Bali
+SEKAA TERUNA TERUNI DHARMA PUTRA
 <?= $this->endSection() ?>
 <!--  -->
 <?= $this->extend('layout_login/app') ?>
