@@ -31,6 +31,10 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">View Presensi</h6>
                         
+                        <button class="btn btn-sm btn-info">
+                            <i class="fa-solid fa-print px-1"></i>
+                            Cetak Absensi
+                        </button>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
@@ -41,6 +45,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 <thead>
                                     <tr>
                                         <th class="text-sm-center">No</th>  
+                                        <th class="text-sm-center">Kode<br>Kegiatan</th> 
                                         <th class="text-sm-center">Nama</th> 
                                         <th class="text-sm-center">Kegiatan</th> 
                                         <th class="text-sm-center">Waktu Presensi</th>  
@@ -155,7 +160,8 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     {data: '2', className: "text-center"},  
                                     {data: '3', className: "text-center"},   
                                     {data: '4', className: "text-center"},   
-                                    <?=(in_groups('sekretaris'))? '{data: "5", orderable: false, className: "text-center"},' : '' ?> 
+                                    {data: '5', className: "text-center"},   
+                                    <?=(in_groups('sekretaris'))? '{data: "6", orderable: false, className: "text-center"},' : '' ?> 
                                 ],    
                         }); 
 

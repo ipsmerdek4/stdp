@@ -14,6 +14,7 @@ class Tbl_kegiatan extends Migration{
             'anggota_id'            => [ 'type' => 'int', 'constraint' => 11, 'unsigned' => true, ],
             'tgl_start_kgt'         => [ 'type' => 'DATETIME', 'null' => true  ], 
             'tgl_end_kgt'           => [ 'type' => 'DATETIME', 'null' => true  ], 
+            'sts_kgt'               => [ 'type' => 'tinyint', 'constraint' => 2, ],  
             'created_at_kgt'        => [ 'type' => 'datetime', 'null' => true],
             'updated_at_kgt'        => [ 'type' => 'datetime', 'null' => true],  
         ]);

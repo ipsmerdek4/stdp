@@ -36,21 +36,35 @@ class Kegiatan extends BaseController{
         $Kegiatan = new KegiatanModel(); 
         $builder = $Kegiatan
                     ->join('tbl_anggota', 'tbl_kegiatan.anggota_id = tbl_anggota.id')
-                    ->select('
-                    tbl_kegiatan.nama_kgt as nama_kgt,  
-                    tbl_kegiatan.tgl_start_kgt as tgl_start_kgt, 
-                    tbl_kegiatan.tgl_end_kgt as tgl_end_kgt, 
-                    tbl_kegiatan.keterangan_kgt as keterangan_kgt,
-                    tbl_anggota.nama_lengkap as nama_lengkap,  
-                    tbl_kegiatan.id as kegiatan_id'
-                    ); 
+                    ->select(' 
+                        tbl_kegiatan.id as kode_id, 
+                        tbl_kegiatan.nama_kgt as nama_kgt,  
+                        tbl_kegiatan.tgl_start_kgt as tgl_start_kgt, 
+                        tbl_kegiatan.tgl_end_kgt as tgl_end_kgt, 
+                        tbl_kegiatan.keterangan_kgt as keterangan_kgt,
+                        tbl_kegiatan.sts_kgt as sts_kgt,
+                        tbl_anggota.nama_lengkap as nama_lengkap, 
+                        tbl_kegiatan.id as kegiatan_id, 
+                    '); 
 
             return DataTable::of($builder)
-                ->addNumbering('no')  
+                // ->addNumbering('no')   
+                ->edit('kode_id', function($row){ 
+                    $v = '<p class="font-weight-bold">#KGT~'.$row->kode_id.'</p>';
+                    return $v ;
+                })  
                 ->edit('tgl_end_kgt', function($row){
                     $vv = explode(' ', $row->tgl_end_kgt);
                     $vvv = explode('-', $vv[0]);
                     $v = '<p class="font-weight-bold">'.$vvv[2].'-'.$vvv[1].'-'.$vvv[0].'</p>';
+                    return $v ;
+                })  
+                ->edit('sts_kgt', function($row){ 
+                    if ($row->sts_kgt == 0) {
+                        $v = '<p class="font-weight-bold text-danger">Tidak Aktiv</p>';
+                    }else{
+                        $v = '<p class="font-weight-bold text-success"> Aktiv</p>';
+                    }
                     return $v ;
                 })  
                 ->edit('tgl_start_kgt', function($row){
@@ -150,6 +164,7 @@ class Kegiatan extends BaseController{
                 'anggota_id'        => user_id(),
                 'tgl_start_kgt'     => $str_date,
                 'tgl_end_kgt'       => $brk_date,
+                'sts_kgt'           => 1,
                 'created_at_kgt'    => date("Y-m-d H:i:s"),
                 'updated_at_kgt'    => null 
             ];
@@ -177,6 +192,7 @@ class Kegiatan extends BaseController{
                                 tbl_kegiatan.tgl_start_kgt as tgl_start_kgt, 
                                 tbl_kegiatan.tgl_end_kgt as tgl_end_kgt, 
                                 tbl_kegiatan.keterangan_kgt as keterangan_kgt,
+                                tbl_kegiatan.sts_kgt as sts_kgt,
                                 tbl_anggota.nama_lengkap as nama_lengkap,  
                                 tbl_kegiatan.id as kegiatan_id'
                         )
@@ -235,7 +251,10 @@ class Kegiatan extends BaseController{
             $kegiatan       = $this->request->getVar('kegiatan'); 
             $ket_kegiatan   = $this->request->getVar('ket_kegiatan'); 
             $str_date       = $this->request->getVar('str_date'); 
-            $brk_date       = $this->request->getVar('brk_date');  
+            $brk_date       = $this->request->getVar('brk_date'); 
+            
+            $sts_kgt        = $this->request->getVar('status'); 
+            
  
             $data1 = [ 
                 'nama_kgt'          => $kegiatan,
@@ -243,6 +262,7 @@ class Kegiatan extends BaseController{
                 'anggota_id'        => user_id(),
                 'tgl_start_kgt'     => $str_date,
                 'tgl_end_kgt'       => $brk_date, 
+                'sts_kgt'           => $sts_kgt,
                 'updated_at_kgt'    => date("Y-m-d H:i:s")  
             ];
 

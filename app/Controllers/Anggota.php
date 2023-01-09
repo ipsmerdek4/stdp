@@ -10,10 +10,10 @@ class Anggota extends BaseController{
 
     public function __construct()
     {
-      $this->db = \Config\Database::connect();
-      $this->builder = $this->db->table('auth_groups');
-      $this->builder2 = $this->db->table('users');
-      $this->builder3 = $this->db->table('auth_groups_users');
+        $this->db = \Config\Database::connect();
+        $this->builder = $this->db->table('auth_groups');
+        $this->builder2 = $this->db->table('users');
+        $this->builder3 = $this->db->table('auth_groups_users');
     }
 
 
@@ -388,9 +388,10 @@ class Anggota extends BaseController{
                     ]
             ], 
             'username'    =>  [ 
-                'ruler'   => 'required' ,
+                'ruler'   => 'required' , 'is_unique[users.username]',
                 'errors'    => [
                     'required'  => 'Username Harus di isi.', 	 
+                    'is_unique'  => 'Username Sudah tersedia.', 	 
                     ]
             ], 
             'password'    =>  [ 

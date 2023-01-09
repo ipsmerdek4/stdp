@@ -15,6 +15,7 @@ class KegiatanModel extends Model{
         'anggota_id',
         'tgl_start_kgt',
         'tgl_end_kgt',  
+        'sts_kgt',
         'created_at_kgt',
         'updated_at_kgt'
     ]; 

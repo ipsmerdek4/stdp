@@ -35,7 +35,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
                         <form action="<?= base_url('/kegiatan/ubah/'.$data['data']->kegiatan_id)?>" method="post" enctype="multipart/form-data">
                             <div class="row">
-                                <div class="offset-lg-2  col-12 col-lg-8 col-xl-4">  
+                                <div class="offset-lg-2 col-12 col-lg-8 col-xl-4">  
                                     <div class="form-group">
                                         <label class="<?= ($data['validation']->hasError('kegiatan')) ? 'text-danger' : 'text-primary' ?>">Nama Kegiatan</label>
                                         <input name="kegiatan" value="<?= $data['data']->nama_kgt ?>" type="text" class="form-control <?= ($data['validation']->hasError('kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" placeholder="..."> 
@@ -44,7 +44,18 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                         </small>  
                                     </div>  
                                 </div>  
-                                <div class=" col-12 col-sm col-xl-4">  
+                                <div class="offset-lg-2 offset-xl-0 col-12 col-lg-8 col-xl-4">  
+                                    <div class="form-group">
+                                        <label class="<?= ($data['validation']->hasError('status')) ? 'text-danger' : 'text-primary' ?>">Status Kegiatan</label>
+                                        <select name="status" 
+                                            class="form-control <?= ($data['validation']->hasError('status')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" >
+                                            <option value="1" <?= ($data['data']->sts_kgt == 1)? "selected" : "" ?> >Aktive</option>
+                                            <option value="0" <?= ($data['data']->sts_kgt == 0)? "selected" : "" ?> >Not Aktive</option>
+                                        </select> 
+                                        <small class="text-danger  ">  
+                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('status')) ?>
+                                        </small>  
+                                    </div>  
                                 </div>  
 
 

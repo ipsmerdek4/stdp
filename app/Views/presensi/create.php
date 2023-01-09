@@ -59,7 +59,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                         <select name="kegiatan" class="form-control form-control-sm <?= ($data['validation']->hasError('kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>">
                                             <option value="">-- Pilih Kegiatan</option>
                                             <?php foreach ($data['kegiatan'] as $v ) : ?>
-                                                <option value="<?= $v->id?>"><?= $v->nama_kgt?></option>
+                                                <option value="<?= $v->id?>"><?= '[ Kode:#KGT~'.$v->id .' ] ['. $v->nama_kgt .']' ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                         <small class="text-danger  ">  

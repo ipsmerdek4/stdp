@@ -102,6 +102,7 @@ class Presensi extends BaseController{
             ->join('tbl_anggota', 'tbl_presensi.anggota_id = tbl_anggota.id')
             ->join('tbl_kegiatan', 'tbl_presensi.kegiatan_id = tbl_kegiatan.id')
             ->select('
+                    tbl_kegiatan.id as kode_id,  
                     tbl_anggota.nama_lengkap as nama_lengkap,  
                     tbl_kegiatan.nama_kgt as nama_kgt, 
                     tbl_presensi.created_at_prsn as waktu_presensi,
@@ -111,6 +112,10 @@ class Presensi extends BaseController{
 
             return DataTable::of($builder)
                 ->addNumbering('no')  
+                ->edit('kode_id', function($row){ 
+                    $v = '<p class="font-weight-bold">#KGT~'.$row->kode_id.'</p>';
+                    return $v ;
+                })  
                  ->edit('keterangan_kgt', function($row){
                     $v  =  '<a href="javascript:void(0)" data-id="'. $row->keterangan_kgt .'" class="btn btn-warning btn-sm pt-1 v-ket-kgt" data-toggle="modal"  data-target="#v-ket-kgt"  data-backdrop="static" data-keyboard="false" style="width:33px;">
                                 <i class="fa-solid fa-up-right-from-square fa-sw"></i>

@@ -49,11 +49,12 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                             <table id="tableAll" class="table table-bordered" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th class="text-sm-center">No</th>  
+                                        <th class="text-sm-center">Kode<br>Kegiatan</th>  
                                         <th class="text-sm-center">Nama Kegiatan</th> 
                                         <th class="text-sm-center">Tanggal Mulai</th> 
                                         <th class="text-sm-center">Tanggal Berakhir</th> 
                                         <th class="text-sm-center">Rincian Kegiatan</th>   
+                                        <th class="text-sm-center">Status</th>   
                                         <th class="text-sm-center">Penerbit</th> 
                                         <?=(in_groups('sekretaris'))? '<th class="text-sm-center">Opsi</th>' : '' ?>  
                                     </tr>
@@ -168,8 +169,9 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     {data: '2', className: "text-center"},  
                                     {data: '3', className: "text-center"},  
                                     {data: '4', className: "text-center"},    
-                                    {data: '5', className: "text-center"}, 
-                                    <?=(in_groups('sekretaris'))? '{data: "6", orderable: false, className: "text-center"},' : '' ?>    
+                                    {data: '5', className: "text-center"},  
+                                    {data: '6', className: "text-center"},  
+                                    <?=(in_groups('sekretaris'))? '{data: "7", orderable: false, className: "text-center"},' : '' ?>    
     
                                 ],    
                         });
