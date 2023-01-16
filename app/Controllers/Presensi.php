@@ -7,6 +7,12 @@ use App\Models\KegiatanModel;
 use App\Models\AnggotaModel;
 
 
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
+
+
+
 class Presensi extends BaseController{
 
 
@@ -16,6 +22,45 @@ class Presensi extends BaseController{
       $this->builder = $this->db->table('auth_groups');
       $this->builder2 = $this->db->table('users');
       $this->builder3 = $this->db->table('auth_groups_users');
+    }
+
+    public function pdf($var = null)
+    {
+        
+
+        $Presensi = new PresensiModel();
+        
+        $get_presensi = $Presensi 
+                            ->join('tbl_anggota', 'tbl_presensi.anggota_id = tbl_anggota.id')
+                            ->join('tbl_kegiatan', 'tbl_presensi.kegiatan_id = tbl_kegiatan.id')
+                            ->select('
+                                tbl_kegiatan.id as kode_id,  
+                                tbl_anggota.nama_lengkap as nama_lengkap,  
+                                tbl_kegiatan.nama_kgt as nama_kgt, 
+                                tbl_presensi.created_at_prsn as waktu_presensi,
+                                tbl_kegiatan.keterangan_kgt as keterangan_kgt,
+                                tbl_presensi.id as presensi_id 
+                            ')
+                            ->findAll();
+
+        $datas = [
+            'get_presensi' => $get_presensi,
+        ];
+
+        $views = view('presensi/pdf', $datas);
+
+        $dompdfs = new Dompdf; 
+        $html = $views; 
+        $dompdfs->set_option('isRemoteEnabled', TRUE);
+        $dompdfs->set_option("isPhpEnabled", true); 
+        $dompdfs->setPaper('A4', 'Portrait'); 
+        $dompdfs->loadHtml($html); 
+        $dompdfs->render();
+        $dompdfs->stream('Laporan'.date('Ymdhis').'.pdf', array(
+                "Attachment" => false
+
+        ));  
+
     }
 
     public function index()

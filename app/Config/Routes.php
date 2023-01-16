@@ -83,6 +83,7 @@ $routes->get('/presensi/edit/(:any)', 'Presensi::edit/$1', ['filter' => 'role:se
 $routes->post('/presensi/ubah/(:any)', 'Presensi::progres_update/$1', ['filter' => 'role:sekretaris, ']);
 $routes->get('/presensi/hapus/(:any)', 'presensi::delete/$1', ['filter' => 'role:sekretaris, ']);
 
+$routes->get('/presensi/cetak/(:any)', 'Presensi::pdf/$1', ['filter' => 'role:sekretaris']);
 
 
 $routes->get('/kegiatan', 'Kegiatan::index', ['filter' => 'role:sekretaris, user']);

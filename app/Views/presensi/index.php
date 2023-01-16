@@ -31,7 +31,11 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                         <h6 class="m-0 font-weight-bold text-primary">View Presensi</h6>
                         
-                        <button class="btn btn-sm btn-info">
+                       <!--  <a href="" class="btn btn-sm btn-info">
+                            <i class="fa-solid fa-print px-1"></i>
+                            Cetak Absensi
+                        </a> -->
+                        <button class="btn btn-sm btn-info" id="cetak-absen">
                             <i class="fa-solid fa-print px-1"></i>
                             Cetak Absensi
                         </button>
@@ -164,6 +168,16 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     <?=(in_groups('sekretaris'))? '{data: "6", orderable: false, className: "text-center"},' : '' ?> 
                                 ],    
                         }); 
+
+                        $('#cetak-absen').click(function (e) { 
+                            e.preventDefault();
+  
+                            var h = screen.height;
+                            var w = screen.width; 
+
+                            window.open('/presensi/cetak/all' , "", "width="+ w +", height=" + h); 
+                            
+                        });
 
                 });
 
