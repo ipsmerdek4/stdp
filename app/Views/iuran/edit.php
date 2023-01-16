@@ -33,11 +33,36 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                     <!-- Card Body -->
                     <div class="card-body">
 
-                        <form action="<?= base_url('/iuran/ubah/'.$data['data']->id)?>" method="post" enctype="multipart/form-data">
+                        <form action="<?= base_url('/kas/ubah/'.$data['data']->id)?>" method="post" enctype="multipart/form-data">
                             <div class="row">  
                                 <div class=" offset-xl-4 col-12 col-sm col-xl-4">  
                                     <div class="form-group">
-                                        <label class="<?= ($data['validation']->hasError('eiuran')) ? 'text-danger' : 'text-primary' ?>">Iuran Bulanan</label>
+                                        <label class="text-primary">Tanggal Pembayaran</label>
+                                        <!-- <input name="b&t" type="month" 
+                                                class="form-control text-primary border border-primary" 
+                                                value="<?php // $data['var'] ?>">   -->
+                                        <input name="b&t" type="date" 
+                                                class="form-control text-primary border border-primary" 
+                                                value="<?php echo(date_format(date_create($data['data']->created_at_iuran),"Y-m-d")) ?>">  
+                                    </div>  
+                                </div>   
+                                <div class=" offset-xl-4 col-12 col-sm col-xl-4">   
+                                    <div class="form-group">
+                                            <label class="<?= ($data['validation']->hasError('tipe')) ? 'text-danger' : 'text-primary' ?>">Tipe Pembayaran</label>
+                                            <select name="tipe" class="form-control <?= ($data['validation']->hasError('tipe')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>"  >
+                                            <option value="">-- Pilih Tipe Pembayaran</option> 
+                                            <option value="1" <?= ($data['data']->sts_iuran == 1) ? 'selected' : '' ?>>Uang Masuk</option> 
+                                            <option value="2" <?= ($data['data']->sts_iuran == 2) ? 'selected' : '' ?>>uang Keluar</option> 
+                                            </select>
+                                            <small class="text-danger  ">  
+                                                <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('tipe')) ?>
+                                            </small>  
+                                    </div>  
+                                </div>   
+
+                                <div class=" offset-xl-4 col-12 col-sm col-xl-4">  
+                                    <div class="form-group">
+                                        <label class="<?= ($data['validation']->hasError('eiuran')) ? 'text-danger' : 'text-primary' ?>">Kas Bulanan</label>
                                         <input name="eiuran" type="text" 
                                             class="rupiah2 form-control <?= ($data['validation']->hasError('eiuran')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>" 
                                             placeholder="Rp. " 
@@ -52,7 +77,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
                                 <div class=" offset-lg-2 col-lg-8 text-right  ">
                                     <hr class="border border-primary">
-                                    <a href="<?=base_url('iuran')?>" class="btn btn-danger btn-sm">Kembali</a> 
+                                    <a href="<?=base_url('kas')?>" class="btn btn-danger btn-sm">Kembali</a> 
                                     <button type="submit" class="btn btn-primary btn-sm">Simpan</button> 
                                 </div>
                             </div> 

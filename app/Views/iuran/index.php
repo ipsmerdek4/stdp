@@ -13,12 +13,12 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            <h1 class="h3 mb-0 text-gray-800">Iuran</h1>
+            <h1 class="h3 mb-0 text-gray-800">Kas</h1>
 
             <?php if (in_groups('bendahara')) : ?> 
-                <a href="<?= base_url('iuran/create/'.date("Y-m")) ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
+                <a href="<?= base_url('kas/create/'.date("Y-m-d")) ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
                     <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
-                    Tambah Iuran
+                    Tambah Kas
                 </a>
             <?php endif; ?>
         </div>
@@ -34,16 +34,16 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">View Iuran</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">View Kas</h6>
                         
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
 
 
-                        <form action="<?=base_url('iuran')?>" method="post">
+                        <form action="<?=base_url('kas')?>" method="post">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-sm-2">
                                     <div class="form-group"> 
                                         <select name="tahun" class="form-control <?= ($data['validation']->hasError('kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>">
                                             <option value="">-- Pilih Tahun</option>
@@ -54,7 +54,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     </div>  
                             </div>
                             <?php if(in_groups('bendahara')): ?>   
-                                <div class="col-3">
+                                <div class="col-sm-3">
                                         <div class="form-group">
                                             <select name="anggota" class="form-control <?= ($data['validation']->hasError('kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>">
                                                 <option value="">-- Pilih Anggota</option>
@@ -72,75 +72,118 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                             <?php endif; ?>   
                             
                             
-                            <div class="col-2">
+                            <div class="col-sm-2">
                                     <button type="submit" class="btn btn-primary w-100">Tampilkan</button>
                             </div>
                         </div>
                         </form>
-                  
+                
                     
                         <div class="table-responsive">
                             <table id="tableAll" class="table table-bordered text-center" style="width:100%">
                                 <thead>
                                     <tr> 
                                         <th class="text-sm-center">No</th>  
-                                        <th class="text-sm-center">Bulan</th>  
+                                        <!-- <th class="text-sm-center">Bulan</th>   -->
+                                        <th class="text-sm-center">Tanggal<br>Pembayaran</th> 
                                         <th class="text-sm-center">Total<br>Pembayaran</th> 
                                         <th class="text-sm-center">Status</th>  
-                                        <th class="text-sm-center">Tanggal<br>Pembayaran</th> 
                                         <?=(in_groups('bendahara'))? '<th class="text-sm-center">Opsi</th>' : '' ?>  
                                     </tr>
                                 </thead>
                                 <tbody> 
-                                    <?php 
-                                        foreach ($data['iuran'] as $vviuran) {   
+                                    <?php $no=0; foreach ($data['get_kas'] as $v): $no++;?>
+                                        <tr>
+                                            <td><?= $no ?></td>
+                                            <td><?= $v->created_at_iuran ?></td>
+                                            <td><?= "Rp " . number_format($v->nominal_iuran,2,',','.') ?></td>
+                                            <td>
+                                                <?php
+                                                    if ($v->sts_iuran == 1) {
+                                                        echo '<span class="badge badge-success p-2">Uang Masuk</span>';
+                                                    }elseif ($v->sts_iuran == 2) {
+                                                        echo '<span class="badge badge-danger p-2">Uang Keluar</span>';
+                                                    }
+                                                ?> 
+                                                <?php if(in_groups('bendahara')): ?>    
+                                                        <td> 
+                                                            <div class="btn-group" role="group" aria-label="Basic example"> 
+                                                                <a href="javascript:void(0)" data-id="<?= $v->id ?>" class="btn btn-success btn-sm pt-1 e-kgt" style="width:33px;">
+                                                                    <i class="fa-solid fa-pen-to-square fa-sm"></i>
+                                                                </a> 
+                                                                <a data-id="<?= $v->id ?>" href="javascript:void(0)" class="btn btn-danger btn-sm pt-1 d-kgt" style="width:33px;">
+                                                                    <i class="fa-solid fa-trash-xmark fa-sm"></i>
+                                                                </a>
+                                                            </div> 
+                                                        </td>
+                                                <?php endif; ?>
+                                        </tr> 
+                                    <?php endforeach; ?>
+
+
+
+
+                                    <!--  <?php 
+                                        // foreach ($data['iuran'] as $vviuran) {   
                                     ?> 
                                             <tr>
-                                                <td><?= $vviuran['datem'] ?></td>
-                                                <td><?= $vviuran['bulan'] ?></td>
-                                                <td><?= "Rp " . number_format($vviuran['nominal_iuran'],2,',','.') ?></td>
+                                                <td><?php //$vviuran['datem'] ?></td>
+                                                <td><?php //$vviuran['bulan'] ?></td>
+                                                <td><?php //"Rp " . number_format($vviuran['nominal_iuran'],2,',','.') ?></td>
                                                 <td> 
                                                     <?php
-                                                    if ($vviuran['status'] == 0) {
-                                                        echo '<span class="badge badge-danger">Belum<br>Membayar</span>';
-                                                    }elseif ($vviuran['status'] == 1) {
-                                                        echo '<span class="badge badge-success p-2">Uang Masuk</span>';
-                                                    }/* elseif ($vviuran['status'] == 2) {
-                                                        echo '<span class="badge badge-success p-2">Uang Keluar</span>';
-                                                    }  */
+                                                    // if ($vviuran['status'] == 0) {
+                                                    //     echo '<span class="badge badge-danger">Belum<br>Membayar</span>';
+                                                    // }elseif ($vviuran['status'] == 1) {
+                                                    //     echo '<span class="badge badge-success p-2">Uang Masuk</span>';
+                                                    // }elseif ($vviuran['status'] == 2) {
+                                                    //     echo '<span class="badge badge-success p-2">Uang Keluar</span>';
+                                                    // }
                                                     ?>
                                                 </td>
-                                                <td><?= $vviuran['tgl_bayar'] ?></td>
-                                        <?php if(in_groups('bendahara')): ?>    
-                                                <td> 
-                                                    <?php
-                                                    if ($vviuran['status'] == 0) { ?> 
-                                                        <div class="btn-group" role="group" aria-label="Basic example"> 
-                                                            <a href="<?= base_url('iuran/create/'.date("Y-").(($vviuran['datem'] < 10)? '0'.$vviuran['datem'] : $vviuran['datem'])) ?>" class="btn btn-success btn-sm pt-1" style="width:33px;">
-                                                                <i class="fa-solid fa-pen-to-square fa-sm"></i>
-                                                            </a>  
-                                                        </div> 
-                                                    <?php }elseif (($vviuran['status'] == 1)or($vviuran['status'] == 2)) { ?> 
-                                                        <div class="btn-group" role="group" aria-label="Basic example"> 
-                                                            <a href="javascript:void(0)" data-id="<?= $vviuran['id'] ?>" class="btn btn-success btn-sm pt-1 e-kgt" style="width:33px;">
-                                                                <i class="fa-solid fa-pen-to-square fa-sm"></i>
-                                                            </a> 
-                                                            <a data-id="<?= $vviuran['id'] ?>" href="javascript:void(0)" class="btn btn-danger btn-sm pt-1 d-kgt" style="width:33px;">
-                                                                <i class="fa-solid fa-trash-xmark fa-sm"></i>
-                                                            </a>
-                                                        </div> 
-                                                    <?php }  ?>
-                                                </td>
-                                        <?php endif; ?>
+                                                <td><?php //$vviuran['tgl_bayar'] ?></td>
+
+                                                <?php //if(in_groups('bendahara')): ?>    
+                                                        <td> 
+                                                            <?php
+                                                            //if ($vviuran['status'] == 0) { ?> 
+                                                                <div class="btn-group" role="group" aria-label="Basic example"> 
+                                                                    <a href="<?php // base_url('kas/create/'.date("Y-").(($vviuran['datem'] < 10)? '0'.$vviuran['datem'] : $vviuran['datem'])) ?>" class="btn btn-success btn-sm pt-1" style="width:33px;">
+                                                                        <i class="fa-solid fa-pen-to-square fa-sm"></i>
+                                                                    </a>  
+                                                                </div> 
+                                                            <?php // }elseif (($vviuran['status'] == 1)or($vviuran['status'] == 2)) { ?> 
+                                                                <div class="btn-group" role="group" aria-label="Basic example"> 
+                                                                    <a href="javascript:void(0)" data-id="<?php //$vviuran['id'] ?>" class="btn btn-success btn-sm pt-1 e-kgt" style="width:33px;">
+                                                                        <i class="fa-solid fa-pen-to-square fa-sm"></i>
+                                                                    </a> 
+                                                                    <a data-id="<?php // $vviuran['id'] ?>" href="javascript:void(0)" class="btn btn-danger btn-sm pt-1 d-kgt" style="width:33px;">
+                                                                        <i class="fa-solid fa-trash-xmark fa-sm"></i>
+                                                                    </a>
+                                                                </div> 
+                                                            <?php //}  ?>
+                                                        </td>
+                                                <?php //endif; ?>
+
+
                                             </tr> 
                                     <?php
-                                        }   
-                                    ?>
+                                        // }   
+                                    ?> -->
+
+ 
                                 </tbody>  
                             </table>
 
                         </div>
 
+                        <hr>
+                        <h5 class="col-sm-12"><small>Uang Masuk : <?= "Rp " . number_format($data['harga_masuk'],2,',','.') ?></small></h5>
+                        <h5 class="col-sm-12"><small>Uang Keluar : <?= "Rp " . number_format($data['harga_keluar'],2,',','.') ?></small></h5>
+                        <div class="col-sm-4"> 
+                            <hr class="border border-primary"> 
+                        </div>
+                        <h5 class="col-sm-12"><small>Total Kas : <?= "Rp " . number_format($data['total'],2,',','.') ?></small></h5>
 
 
                     </div>
@@ -260,7 +303,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Edit'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/iuran/edit/" + id); 
+                                        window.location.replace("/kas/edit/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }
@@ -281,7 +324,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Hapus'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/iuran/hapus/" + id); 
+                                        window.location.replace("/kas/hapus/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }

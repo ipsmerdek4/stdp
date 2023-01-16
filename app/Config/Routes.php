@@ -44,13 +44,13 @@ $routes->get('/profil', 'Profil::index');
 
 
 
-$routes->get('/iuran', 'Iuran::index', ['filter' => 'role:bendahara, user, ']);
-$routes->post('/iuran', 'Iuran::index', ['filter' => 'role:bendahara, user, ']); 
-$routes->get('/iuran/create/(:any)', 'Iuran::create/$1', ['filter' => 'role:bendahara']);
-$routes->post('/iuran/tambah', 'Iuran::progress', ['filter' => 'role:bendahara']);
-$routes->get('/iuran/edit/(:any)', 'Iuran::edit/$1', ['filter' => 'role:bendahara']);
-$routes->post('/iuran/ubah/(:any)', 'Iuran::progres_update/$1', ['filter' => 'role:bendahara']);
-$routes->get('/iuran/hapus/(:any)', 'Iuran::delete/$1', ['filter' => 'role:bendahara']);
+$routes->get('/kas', 'Iuran::index', ['filter' => 'role:bendahara, user, ']);
+$routes->post('/kas', 'Iuran::index', ['filter' => 'role:bendahara, user, ']); 
+$routes->get('/kas/create/(:any)', 'Iuran::create/$1', ['filter' => 'role:bendahara']);
+$routes->post('/kas/tambah', 'Iuran::progress', ['filter' => 'role:bendahara']);
+$routes->get('/kas/edit/(:any)', 'Iuran::edit/$1', ['filter' => 'role:bendahara']);
+$routes->post('/kas/ubah/(:any)', 'Iuran::progres_update/$1', ['filter' => 'role:bendahara']);
+$routes->get('/kas/hapus/(:any)', 'Iuran::delete/$1', ['filter' => 'role:bendahara']);
 
 
 $routes->get('/laporan', 'Laporan::index', ['filter' => 'role:sekretaris,']);

@@ -40,10 +40,10 @@ $uri = service('uri')->getSegments();
                     <?php if (in_groups('user')|| in_groups('bendahara') ) : ?>
 
                         <!-- Nav Item - Dashboard -->
-                        <li class="nav-item  <?= ($uri0 == 'iuran') ? 'active' : '' ?>  ">
-                            <a class="nav-link" href="<?= base_url('iuran') ?>">
+                        <li class="nav-item  <?= ($uri0 == 'kas') ? 'active' : '' ?>  ">
+                            <a class="nav-link" href="<?= base_url('kas') ?>">
                                 <i class="fa-thin fa-money-bills-simple"></i>                    
-                                <span> Iuran</span>
+                                <span> Kas</span>
                             </a>
                         </li>
                     <?php endif; ?>
