@@ -90,10 +90,10 @@ $uri = service('uri')->getSegments();
                     <?php endif; ?>
              
                     <?php if (in_groups('sekretaris')) : ?>  
-                        <li class="nav-item <?= ($uri0 == 'laporan') ? 'active' : '' ?>">
-                            <a class="nav-link  " href="<?= base_url('laporan') ?>">
+                        <li class="nav-item <?= ($uri0 == 'arsip') ? 'active' : '' ?>">
+                            <a class="nav-link  " href="<?= base_url('arsip') ?>">
                             <i class="fa-solid fa-file" style="font-size: 18px;"></i>           
-                                <span> Laporan</span>
+                                <span> Arsip</span>
                             </a>
                         </li>
                     <?php endif; ?>

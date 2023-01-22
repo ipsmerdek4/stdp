@@ -63,7 +63,7 @@ class Laporan extends BaseController{
             ], 
         ])) {
             $validation = \Config\Services::validation();  
-            return redirect()->to('/laporan/create')->withInput();
+            return redirect()->to('/arsip/create')->withInput();
         }
   
 
@@ -107,8 +107,8 @@ class Laporan extends BaseController{
             $Laporan = new LaporanModel();
             $Laporan->insert($data1);  
 
-            session()->setFlashdata('msg_sccs', 'Berhasil Menambah Data Laporan.');
-            return redirect()->to(base_url('laporan'))->withInput();   
+            session()->setFlashdata('msg_sccs', 'Berhasil Menambah Data Arsip.');
+            return redirect()->to(base_url('arsip'))->withInput();   
  
 
 
@@ -212,7 +212,7 @@ class Laporan extends BaseController{
             ], 
         ])) {
             $validation = \Config\Services::validation();  
-            return redirect()->to('/laporan/edit/'.$var)->withInput();
+            return redirect()->to('/arsip/edit/'.$var)->withInput();
         }
     
            
@@ -257,8 +257,8 @@ class Laporan extends BaseController{
             $Laporan = new LaporanModel();
             $Laporan->update($var, $data1);
  
-            session()->setFlashdata('msg_sccs', 'Berhasil Merubah Data Laporan.');
-            return redirect()->to(base_url('/laporan'));
+            session()->setFlashdata('msg_sccs', 'Berhasil Merubah Data Arsip.');
+            return redirect()->to(base_url('/arsip'));
 
 
 
@@ -276,8 +276,8 @@ class Laporan extends BaseController{
 
         
 
-        session()->setFlashdata('msg_sccs', 'Berhasil Menghapus Data Laporan.');
-        return redirect()->to(base_url('/laporan'));
+        session()->setFlashdata('msg_sccs', 'Berhasil Menghapus Data Arsip.');
+        return redirect()->to(base_url('/arsip'));
 
 
     }

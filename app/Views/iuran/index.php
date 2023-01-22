@@ -16,7 +16,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
             <h1 class="h3 mb-0 text-gray-800">Kas</h1>
 
             <?php if (in_groups('bendahara')) : ?> 
-                <a href="<?= base_url('kas/create/'.date("Y-m-d")) ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
+                <a href="<?= base_url('kas/create/') ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
                     <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
                     Tambah Kas
                 </a>
@@ -52,24 +52,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                             <?php }  ?>
                                         </select>  
                                     </div>  
-                            </div>
-                            <?php if(in_groups('bendahara')): ?>   
-                                <div class="col-sm-3">
-                                        <div class="form-group">
-                                            <select name="anggota" class="form-control <?= ($data['validation']->hasError('kegiatan')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>">
-                                                <option value="">-- Pilih Anggota</option>
-                                                <?php foreach ($data['anggota'] as $v):?>
-                                                    <option value="<?= $v->id ?>" <?= ($v->id == $data['user_id'])? 'selected' : '' ?> ><?= $v->nama_lengkap ?></option> 
-                                                <?php endforeach;  ?>
-                                            </select>  
-                                        </div>  
-                                </div> 
-
-
-                            <?php else: ?>    
-
-                                <input type="hidden" name="anggota" value="<?=$data['user_id']?>">
-                            <?php endif; ?>   
+                            </div> 
                             
                             
                             <div class="col-sm-2">

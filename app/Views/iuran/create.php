@@ -41,9 +41,8 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                         <!-- <input name="b&t" type="month" 
                                                 class="form-control text-primary border border-primary" 
                                                 value="<?php // $data['var'] ?>">   -->
-                                        <input name="b&t" type="date" 
-                                                class="form-control text-primary border border-primary" 
-                                                value="<?= $data['var'] ?>">  
+                                        <input name="b&t" type="datetime-local" 
+                                                class="form-control text-primary border border-primary"  >  
                                     </div>  
                                 </div>  
                                 <div class=" col-12 col-sm col-xl-4">  
@@ -63,20 +62,20 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
 
 
                                 <div class=" offset-xl-2 col-12 col-sm col-xl-4"> 
-                                    <div class="form-group">
-                                        <label class="<?= ($data['validation']->hasError('anggota')) ? 'text-danger' : 'text-primary' ?>">Nama Anggota</label>
-                                        <select name="anggota" class="form-control <?= ($data['validation']->hasError('anggota')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>"  >
+                                    <!-- <div class="form-group">
+                                        <label class="<?php // ($data['validation']->hasError('anggota')) ? 'text-danger' : 'text-primary' ?>">Nama Anggota</label>
+                                        <select name="anggota" class="form-control <?php // ($data['validation']->hasError('anggota')) ? 'text-danger border border-danger' : 'text-primary border border-primary' ?>"  >
                                             <option value="">-- Pilih Anggota</option>
-                                            <?php foreach ($data['anggota'] as $vvv) : ?>
-                                                <option value="<?= $vvv->id ?>"><?= $vvv->nama_lengkap ?></option>
-                                            <?php endforeach; ?> 
+                                            <?php //foreach ($data['anggota'] as $vvv) : ?>
+                                                <option value="<?php // $vvv->id ?>"><?php // $vvv->nama_lengkap ?></option>
+                                            <?php //endforeach; ?> 
                                         </select>
                                         <small class="text-danger  ">  
-                                            <?=preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('anggota')) ?>
+                                            <?php //preg_replace("/[^a-zA-Z0-9]/", " ", $data['validation']->getError('anggota')) ?>
                                         </small>  
                                     </div>  
                                 </div> 
-                                <div class=" col-12 col-sm col-xl-4"> 
+                                <div class=" col-12 col-sm col-xl-4">  -->
                                     <div class="form-group">
                                         <label class="<?= ($data['validation']->hasError('iuran')) ? 'text-danger' : 'text-primary' ?>">Kas Bulanan</label>
                                         <input name="iuran" type="text" 

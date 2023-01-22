@@ -24,23 +24,22 @@ class Iuran extends BaseController{
 
 
         $tahun      = $this->request->getVar('tahun'); 
-        $anggota    = $this->request->getVar('anggota');  
+        // $anggota    = $this->request->getVar('anggota');  
     
-        if (isset($anggota)) { 
-            $anggota    = $this->request->getVar('anggota');  
-        }else{ 
-            $anggota    = user_id();  
-        }
-    
-        if (isset($tahun)) { 
-            $tahun      = $this->request->getVar('tahun'); 
-        }else{ 
-            $tahun      = date("Y"); 
-        }
+        // if (isset($anggota)) { 
+        //     $anggota    = $this->request->getVar('anggota');  
+        // }else{ 
+        $anggota_get    = user_id();  
+        // }
 
     
-        $Anggota    =  new AnggotaModel();
-        $Iuran      =  new IuranModel();
+        if (isset($tahun)) { 
+            $tahun      = $this->request->getVar('tahun')."-"; 
+        }else{ 
+            $tahun      = date("Y")."-"; 
+        }
+
+ 
 
  
         /* 
@@ -107,10 +106,10 @@ class Iuran extends BaseController{
         $build = $builder;
 
         
-
+        $Iuran      =  new IuranModel(); 
         $get_kas = $Iuran
-                        ->where('anggota_id', $anggota)         
-                        ->where('tahun_iuran', $tahun)   
+                        // ->where('anggota_id', $anggota_get)     
+                        ->like('created_at_iuran', $tahun)     
                         ->findAll();
 
         $harga_masuk = 0;
@@ -129,7 +128,7 @@ class Iuran extends BaseController{
         session();
         $data = [   
             'tahunXX'           => $tahun,
-            'user_id'           => $anggota,
+            // 'user_id'           => $anggota,
             'get_kas'           => $get_kas,
             'harga_masuk'       => $harga_masuk,
             'harga_keluar'      => $harga_keluar,
@@ -148,12 +147,10 @@ class Iuran extends BaseController{
     }
 
     
-    public function create($var)
+    public function create()
     { 
         
-        $nvar = (isset($var))? $var : date("Y-m-d"); 
-
-        $Anggota =  new AnggotaModel();
+        // $nvar = (isset($var))? $var : date("Y-m-d"); 
 
         $Anggota = new AnggotaModel(); 
         $builder = $Anggota->where('id', user_id())->first();
@@ -163,7 +160,7 @@ class Iuran extends BaseController{
 
         session();
         $data = [      
-            'var'               => $nvar,
+            // 'var'               => $nvar,
             'anggota'           => $Anggota->findAll(),
             'validation' 		=> \Config\Services::validation(), 
         ];
@@ -175,8 +172,7 @@ class Iuran extends BaseController{
     public function progress()
     {
  
-        $bt = explode("-", $this->request->getVar('b&t'));  
-        $anggota = $this->request->getVar('anggota');  
+        // $anggota = $this->request->getVar('anggota');  
 
         $Iuran =  new IuranModel();
         // $check = $Iuran
@@ -190,12 +186,12 @@ class Iuran extends BaseController{
         //     return redirect()->to(base_url('kas/create/'.$this->request->getVar('b&t')));
         // }else{
             if (!$this->validate([  
-                'anggota'    =>  [ 
-                    'ruler'   => 'required' ,
-                    'errors'    => [
-                        'required'  => 'Anggota Harus di Pilih.', 	 
-                        ]
-                ], 
+                // 'anggota'    =>  [ 
+                //     'ruler'   => 'required' ,
+                //     'errors'    => [
+                //         'required'  => 'Anggota Harus di Pilih.', 	 
+                //         ]
+                // ], 
                 'tipe'    =>  [ 
                     'ruler'   => 'required' ,
                     'errors'    => [
@@ -212,17 +208,19 @@ class Iuran extends BaseController{
                 $validation = \Config\Services::validation();  
                 return redirect()->to('kas/create/'.$this->request->getVar('b&t'))->withInput();
             }
-  
+
+            $bt         = explode("T", $this->request->getVar('b&t'));   
+            $newbt      = $bt[0]." ".$bt[1].":00";  
             $iuran      = preg_replace("/[^0-9]/", "", $this->request->getVar('iuran')); 
             $tipe       = $this->request->getVar('tipe');  
-
+ 
             $data1 = [ 
-                'anggota_id'        => $anggota,
-                'tahun_iuran'       => $bt[0],
-                'bulan_iuran'       => $bt[1],
+                // 'anggota_id'        => $anggota,
+                // 'tahun_iuran'       => $bt[0],
+                // 'bulan_iuran'       => $bt[1],
                 'nominal_iuran'     => $iuran,
                 'sts_iuran'         => $tipe, 
-                'created_at_iuran'  => date("Y-m-d H:i:s"), 
+                'created_at_iuran'  => $newbt, 
                 'updated_at_iuran'  => null 
             ];
 
@@ -294,13 +292,14 @@ class Iuran extends BaseController{
 
 
             $iuran      = preg_replace("/[^0-9]/", "", $this->request->getVar('eiuran'));   
-            $tipe       =  $this->request->getVar('tipe');   
-            $bt         =  $this->request->getVar('b&t').' '.date("H:i:s");   
- 
+            $tipe       =  $this->request->getVar('tipe');     
+            $bt         = explode("T", $this->request->getVar('b&t'));   
+            $newbt      = $bt[0]." ".$bt[1].":00";  
+
             $data1 = [  
                 'sts_iuran'         => $tipe, 
                 'nominal_iuran'     => $iuran, 
-                'created_at_iuran'  => $bt, 
+                'created_at_iuran'  => $newbt, 
                 'updated_at_iuran'  => date("Y-m-d H:i:s") 
             ];
  

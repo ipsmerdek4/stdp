@@ -46,20 +46,20 @@ $routes->get('/profil', 'Profil::index');
 
 $routes->get('/kas', 'Iuran::index', ['filter' => 'role:bendahara, user, ']);
 $routes->post('/kas', 'Iuran::index', ['filter' => 'role:bendahara, user, ']); 
-$routes->get('/kas/create/(:any)', 'Iuran::create/$1', ['filter' => 'role:bendahara']);
+$routes->get('/kas/create', 'Iuran::create', ['filter' => 'role:bendahara']);
 $routes->post('/kas/tambah', 'Iuran::progress', ['filter' => 'role:bendahara']);
 $routes->get('/kas/edit/(:any)', 'Iuran::edit/$1', ['filter' => 'role:bendahara']);
 $routes->post('/kas/ubah/(:any)', 'Iuran::progres_update/$1', ['filter' => 'role:bendahara']);
 $routes->get('/kas/hapus/(:any)', 'Iuran::delete/$1', ['filter' => 'role:bendahara']);
 
 
-$routes->get('/laporan', 'Laporan::index', ['filter' => 'role:sekretaris,']);
-$routes->get('/laporan/boxview-laporan', 'Laporan::views_', ['filter' => 'role:sekretaris,']);
-$routes->get('/laporan/create', 'Laporan::create', ['filter' => 'role:sekretaris,']); 
-$routes->post('/laporan/tambah', 'Laporan::progress', ['filter' => 'role:sekretaris,']); 
-$routes->get('/laporan/edit/(:any)', 'laporan::edit/$1', ['filter' => 'role:sekretaris,']);
-$routes->post('/laporan/ubah/(:any)', 'laporan::progres_update/$1', ['filter' => 'role:sekretaris,']);
-$routes->get('/laporan/hapus/(:any)', 'laporan  ::delete/$1', ['filter' => 'role:sekretaris,']);
+$routes->get('/arsip', 'Laporan::index', ['filter' => 'role:sekretaris,']);
+$routes->get('/arsip/boxview-laporan', 'Laporan::views_', ['filter' => 'role:sekretaris,']);
+$routes->get('/arsip/create', 'Laporan::create', ['filter' => 'role:sekretaris,']); 
+$routes->post('/arsip/tambah', 'Laporan::progress', ['filter' => 'role:sekretaris,']); 
+$routes->get('/arsip/edit/(:any)', 'laporan::edit/$1', ['filter' => 'role:sekretaris,']);
+$routes->post('/arsip/ubah/(:any)', 'laporan::progres_update/$1', ['filter' => 'role:sekretaris,']);
+$routes->get('/arsip/hapus/(:any)', 'laporan::delete/$1', ['filter' => 'role:sekretaris,']);
 
 
 

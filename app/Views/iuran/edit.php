@@ -41,9 +41,9 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                         <!-- <input name="b&t" type="month" 
                                                 class="form-control text-primary border border-primary" 
                                                 value="<?php // $data['var'] ?>">   -->
-                                        <input name="b&t" type="date" 
+                                        <input name="b&t" type="datetime-local" 
                                                 class="form-control text-primary border border-primary" 
-                                                value="<?php echo(date_format(date_create($data['data']->created_at_iuran),"Y-m-d")) ?>">  
+                                                value="<?= $data['data']->created_at_iuran ?>">  
                                     </div>  
                                 </div>   
                                 <div class=" offset-xl-4 col-12 col-sm col-xl-4">   

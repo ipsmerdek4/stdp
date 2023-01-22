@@ -13,11 +13,11 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            <h1 class="h3 mb-0 text-gray-800">Laporan</h1>
+            <h1 class="h3 mb-0 text-gray-800">Arsip</h1>
 
-            <a href="<?= base_url('laporan/create') ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
+            <a href="<?= base_url('arsip/create') ?>" class="btn btn-sm btn-primary shadow-sm mt-4 mt-sm-0">
                 <i class="fa-solid fa-plus fa-sm text-white-50 pr-1"></i> 
-                Tambah Laporan
+                Tambah Arsip
             </a>
         </div>
 
@@ -32,7 +32,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                     <!-- Card Header - Dropdown -->
                     <div
                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">View Laporan</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">View Arsip</h6>
                         
                     </div>
                     <!-- Card Body -->
@@ -45,9 +45,9 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                     <tr>
                                         <th class="text-sm-center">No</th>  
                                         <th class="text-sm-center">Tanggal</th> 
-                                        <th class="text-sm-center">Nama Laporan</th> 
-                                        <th class="text-sm-center">Keterangan Laporan</th> 
-                                        <th class="text-sm-center">File Laporan</th>   
+                                        <th class="text-sm-center">Nama Arsip</th> 
+                                        <th class="text-sm-center">Keterangan Arsip</th> 
+                                        <th class="text-sm-center">File Arsip</th>   
                                         <th class="text-sm-center">Penerbit</th>   
                                         <th class="text-sm-center">Opsi</th> 
                                     </tr>
@@ -156,7 +156,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 processing: true,
                                 serverSide: true,
                                 order: [[ 2, 'asc' ],],  
-                                ajax: "/laporan/boxview-laporan", 
+                                ajax: "/arsip/boxview-laporan", 
                                 columns: [
                                     {data: '0', orderable: false, className: "text-center"}, 
                                     {data: '1', className: "text-center"}, 
@@ -192,7 +192,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Edit'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/laporan/edit/" + id); 
+                                        window.location.replace("/arsip/edit/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }
@@ -213,7 +213,7 @@ SEKAA TERUNA TERUNI DHARMA PUTRA
                                 confirmButtonText: 'Hapus'
                             }).then((result) => {
                                     if (result.isConfirmed) {   
-                                        window.location.replace("/laporan/hapus/" + id); 
+                                        window.location.replace("/arsip/hapus/" + id); 
                                     } else{
                                         // $('#epersediaan').modal('show'); 
                                     }

@@ -1,0 +1,727 @@
+ERROR - 2023-01-22 15:30:50 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('127.0.0.1', 'root', '', 'stdp', 3306, '', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1361): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1380): CodeIgniter\Database\BaseConnection->listTables()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(760): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#11 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(918): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#12 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#13 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(345): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#15 D:\laragon\www\stdp\spark(98): CodeIgniter\CLI\Console->run()
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1361): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1380): CodeIgniter\Database\BaseConnection->listTables()
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(760): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#10 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(918): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#11 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#12 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(345): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#14 D:\laragon\www\stdp\spark(98): CodeIgniter\CLI\Console->run()
+#15 {main}
+ERROR - 2023-01-22 15:30:55 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('127.0.0.1', 'root', '', 'stdp', 3306, '', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1361): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1380): CodeIgniter\Database\BaseConnection->listTables()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(760): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(241): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRollback.php(92): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\BaseCommand.php(112): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRefresh.php(84): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#11 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#14 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(918): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#15 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#16 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(345): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#18 D:\laragon\www\stdp\spark(98): CodeIgniter\CLI\Console->run()
+#19 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1361): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1380): CodeIgniter\Database\BaseConnection->listTables()
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(760): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(241): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRollback.php(92): CodeIgniter\Database\MigrationRunner->regress(0)
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\BaseCommand.php(112): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRefresh.php(84): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#10 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#11 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#12 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#13 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(918): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#14 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#15 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(345): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#17 D:\laragon\www\stdp\spark(98): CodeIgniter\CLI\Console->run()
+#18 {main}
+ERROR - 2023-01-22 15:30:57 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('127.0.0.1', 'root', '', 'stdp', 3306, '', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1361): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1380): CodeIgniter\Database\BaseConnection->listTables()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(760): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\BaseCommand.php(112): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRefresh.php(85): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#14 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(918): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#15 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#16 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(345): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#18 D:\laragon\www\stdp\spark(98): CodeIgniter\CLI\Console->run()
+#19 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1361): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1380): CodeIgniter\Database\BaseConnection->listTables()
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(760): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\BaseCommand.php(112): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRefresh.php(85): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#10 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#11 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#12 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#13 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(918): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#14 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#15 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(345): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#17 D:\laragon\www\stdp\spark(98): CodeIgniter\CLI\Console->run()
+#18 {main}
+ERROR - 2023-01-22 15:31:14 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('127.0.0.1', 'root', '', 'stdp', 3306, '', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1361): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1380): CodeIgniter\Database\BaseConnection->listTables()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(760): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(241): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRollback.php(92): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\BaseCommand.php(112): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRefresh.php(84): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#11 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#14 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(918): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#15 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#16 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(345): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#17 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#18 D:\laragon\www\stdp\spark(98): CodeIgniter\CLI\Console->run()
+#19 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(561): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1361): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(1380): CodeIgniter\Database\BaseConnection->listTables()
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(760): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(241): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRollback.php(92): CodeIgniter\Database\MigrationRunner->regress(0)
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\BaseCommand.php(112): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Commands\Database\MigrateRefresh.php(84): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#10 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Commands.php(63): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#11 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(65): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#12 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\CommandRunner.php(51): CodeIgniter\CLI\CommandRunner->index(Array)
+#13 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(918): CodeIgniter\CLI\CommandRunner->_remap('index', Array)
+#14 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(CodeIgniter\CLI\CommandRunner))
+#15 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(345): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#16 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CodeIgniter->run()
+#17 D:\laragon\www\stdp\spark(98): CodeIgniter\CLI\Console->run()
+#18 {main}
+ERROR - 2023-01-22 16:11:59 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:11:59 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:12:12 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:12:12 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:12:41 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:12:41 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:12:46 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:12:46 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:13:22 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:13:22 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:13:36 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:13:36 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:14:40 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:14:40 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:14:47 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:14:47 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:14:50 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:14:50 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(114): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:16:30 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:16:30 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:16:37 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:16:37 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:16:54 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:16:54 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:16:55 --> mysqli_sql_exception: Unknown column 'anggota_id' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:16:55 --> Unknown column 'anggota_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = \'2\'
+AND `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `anggota_id` = :anggota_id:
+AND `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-01-22 16:17:14 --> mysqli_sql_exception: Unknown column 'tahun_iuran' in 'where clause' in D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\stdp\app\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(925): App\Controllers\Iuran->index()
+#8 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+#9 D:\laragon\www\stdp\vendor\codeigniter4\framework\system\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\stdp\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-01-22 16:17:14 --> Unknown column 'tahun_iuran' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `tbl_iuran`
+WHERE `tahun_iuran` = \'2023\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(666): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tbl_iuran`
+WHERE `tahun_iuran` = \'2023\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(593): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tbl_iuran`
+WHERE `tahun_iuran` = \'2023\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tbl_iuran`
+WHERE `tahun_iuran` = :tahun_iuran:', [...], false)
+ 5 SYSTEMPATH\Model.php(240): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(586): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Iuran.php(113): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 9 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+10 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-01-22 16:18:21 --> Undefined variable: anggota
+in APPPATH\Controllers\Iuran.php on line 131.
+ 1 APPPATH\Controllers\Iuran.php(131): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: anggota', 'APPPATH\\Controllers\\Iuran.php', 131, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(925): App\Controllers\Iuran->index()
+ 3 SYSTEMPATH\CodeIgniter.php(480): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Iuran))
+ 4 SYSTEMPATH\CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
